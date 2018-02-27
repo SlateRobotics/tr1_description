@@ -1,0 +1,21 @@
+<robot name="tr1">
+	<link name="base_link">
+		<visual>
+			<geometry>
+				<box size="0.620 0.620 0.223"/>
+			</geometry>
+		</visual>
+	</link>
+	<link name="riserbase_link">
+		<visual>
+			<geometry>
+				<box size="1.225 0.471 0.339"/>
+			</geometry>
+		</visual>
+	</link>
+	<joint name="base_to_riserbase" type="fixed">
+		<parent link="base_link"/>
+		<child link="riserbase_link"/>
+		<origin xyz="0 0.2 0.1115"/>
+	</joint>
+</robot>

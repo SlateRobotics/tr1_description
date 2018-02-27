@@ -4,7 +4,7 @@
 	<arg name="gut" default="False" />
 
 	<!-- set these parameters on Parameter Server -->
-	<param name="tr1_description" textfile="$(arg model)" />
+	<param name="robot_description" textfile="$(arg model)" />
 	<param name="use_gut" value="$(arg gut)"/>
 
 	<!-- Start 3 nodes: joint_state_publisher, robot_state_publisher and rviz -->

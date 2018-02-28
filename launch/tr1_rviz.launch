@@ -13,6 +13,6 @@
     <rosparam param="/source_list">[/move_group/fake_controller_joint_states]</rosparam>
   </node>
 	<node name="robot_state_publisher" pkg="robot_state_publisher" type="state_publisher" />
-	<node name="rviz" pkg="rviz" type="rviz" args="-d urdf.rviz" required="true" />
+	<node name="rviz" pkg="rviz" type="rviz" args="-d $(find tr1_description)/urdf.rviz" required="true" />
 	<!-- (required = "true") if rviz dies, entire roslaunch will be killed -->
 </launch>

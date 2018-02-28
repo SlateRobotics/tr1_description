@@ -26,6 +26,69 @@
 		</visual>
 	</link>
 
+	<link name="arm2_link">
+		<visual>
+			<geometry>
+        <mesh filename="package://tr1_description/meshes/arm2.dae" scale="0.1 0.1 0.1"/>
+			</geometry>
+			<origin rpy="0 0 0" xyz="0 0 0"/>
+		</visual>
+	</link>
+
+	<link name="arm4_link">
+		<visual>
+			<geometry>
+        <mesh filename="package://tr1_description/meshes/arm4.dae" scale="0.1 0.1 0.1"/>
+			</geometry>
+			<origin rpy="0 0 0" xyz="0 0 0"/>
+		</visual>
+	</link>
+
+	<link name="arm5_link">
+		<visual>
+			<geometry>
+        <mesh filename="package://tr1_description/meshes/arm5.dae" scale="0.1 0.1 0.1"/>
+			</geometry>
+			<origin rpy="0 0 0" xyz="0 0 0"/>
+		</visual>
+	</link>
+
+	<link name="arm6_link">
+		<visual>
+			<geometry>
+        <mesh filename="package://tr1_description/meshes/arm6.dae" scale="0.1 0.1 0.1"/>
+			</geometry>
+			<origin rpy="0 0 0" xyz="0 0 0"/>
+		</visual>
+	</link>
+
+	<link name="arm7_link">
+		<visual>
+			<geometry>
+        <mesh filename="package://tr1_description/meshes/arm7.dae" scale="0.1 0.1 0.1"/>
+			</geometry>
+			<origin rpy="0 0 0" xyz="0 0 0"/>
+		</visual>
+	</link>
+
+	<link name="arm8_link">
+		<visual>
+			<geometry>
+        <mesh filename="package://tr1_description/meshes/arm8.dae" scale="0.1 0.1 0.1"/>
+			</geometry>
+			<origin rpy="0 0 0" xyz="0 0 0"/>
+		</visual>
+	</link>
+
+	<link name="arm3_link">
+		<visual>
+			<geometry>
+        <mesh filename="package://tr1_description/meshes/arm3.dae" scale="0.1 0.1 0.1"/>
+			</geometry>
+			<origin rpy="0 0 0" xyz="0 0 0"/>
+		</visual>
+	</link>
+
 	<link name="neck_base_link">
 		<visual>
 			<geometry>
@@ -65,6 +128,48 @@
 		<parent link="body_link"/>
 		<child link="arm1_link"/>
 		<origin rpy="0 0 0.261799" xyz="0.155887 0.026656 0.2075"/>
+	</joint>
+
+	<joint name="arm1_to_arm2" type="fixed">
+		<parent link="arm1_link"/>
+		<child link="arm2_link"/>
+		<origin rpy="0 0 0" xyz="0 0.139238 0"/>
+	</joint>
+
+	<joint name="arm2_to_arm3" type="fixed">
+		<parent link="arm2_link"/>
+		<child link="arm3_link"/>
+		<origin rpy="0 0 0" xyz="0 0 0"/>
+	</joint>
+
+	<joint name="arm3_to_arm4" type="fixed">
+		<parent link="arm3_link"/>
+		<child link="arm4_link"/>
+		<origin rpy="0 0 0" xyz="0 0 0"/>
+	</joint>
+
+	<joint name="arm4_to_arm5" type="fixed">
+		<parent link="arm4_link"/>
+		<child link="arm5_link"/>
+		<origin rpy="0 0 0" xyz="0 0 0"/>
+	</joint>
+
+	<joint name="arm5_to_arm6" type="fixed">
+		<parent link="arm5_link"/>
+		<child link="arm6_link"/>
+		<origin rpy="0 0 0" xyz="0 0 0"/>
+	</joint>
+
+	<joint name="arm6_to_arm7" type="fixed">
+		<parent link="arm6_link"/>
+		<child link="arm7_link"/>
+		<origin rpy="0 0 0" xyz="0 0 0"/>
+	</joint>
+
+	<joint name="arm7_to_arm8" type="fixed">
+		<parent link="arm7_link"/>
+		<child link="arm8_link"/>
+		<origin rpy="0 0 0" xyz="0 0 0"/>
 	</joint>
 
 	<joint name="body_to_neck_base" type="fixed">

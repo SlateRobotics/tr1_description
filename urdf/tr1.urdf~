@@ -13,7 +13,16 @@
 			<geometry>
         <mesh filename="package://tr1_description/meshes/body.dae" scale="0.1 0.1 0.1"/>
 			</geometry>
-			<origin rpy="0 0 0" xyz="-0.3975 -0.17 0"/>
+			<origin rpy="0 0 0" xyz="-0.3975 -0.17 -0.038"/>
+		</visual>
+	</link>
+
+	<link name="arm1_link">
+		<visual>
+			<geometry>
+        <mesh filename="package://tr1_description/meshes/arm1.dae" scale="0.1 0.1 0.1"/>
+			</geometry>
+			<origin rpy="1.5708 0 0" xyz="-0.073 0.0238 -0.14"/>
 		</visual>
 	</link>
 
@@ -22,7 +31,7 @@
 			<geometry>
         <mesh filename="package://tr1_description/meshes/neck_base.dae" scale="0.1 0.1 0.1"/>
 			</geometry>
-			<origin rpy="1.57 0 0" xyz="0 0.103 -0.02"/>
+			<origin rpy="1.57 0 0" xyz="0 0.103 -0.023"/>
 		</visual>
 	</link>
 
@@ -48,14 +57,20 @@
 		<parent link="base_link"/>
 		<child link="body_link"/>
     <axis xyz="0 0 1"/>
-		<limit effort="1000.0" lower="0" upper="0.150" velocity="0.0001"/>
-		<origin rpy="0 0 0" xyz="0 0 0.76"/>
+		<limit effort="1000.0" lower="0" upper="0.300" velocity="0.0001"/>
+		<origin rpy="0 0 0" xyz="0 0 0.7955"/>
+	</joint>
+
+	<joint name="body_to_arm1" type="fixed">
+		<parent link="body_link"/>
+		<child link="arm1_link"/>
+		<origin rpy="0 0 0.261799" xyz="0.155887 0.026656 0.2075"/>
 	</joint>
 
 	<joint name="body_to_neck_base" type="fixed">
 		<parent link="body_link"/>
 		<child link="neck_base_link"/>
-		<origin rpy="0 0 0" xyz="0 0 0.4"/>
+		<origin rpy="0 0 0" xyz="0 0 0.365"/>
 	</joint>
 
 	<joint name="neck_base_to_neck" type="revolute">

@@ -133,13 +133,13 @@
 	<joint name="arm1_to_arm2" type="fixed">
 		<parent link="arm1_link"/>
 		<child link="arm2_link"/>
-		<origin rpy="0 0 0" xyz="0 0.139238 0"/>
+		<origin rpy="0 0 0" xyz="0 0 0"/>
 	</joint>
 
 	<joint name="arm2_to_arm3" type="fixed">
 		<parent link="arm2_link"/>
 		<child link="arm3_link"/>
-		<origin rpy="0 0 0" xyz="0 0 0"/>
+		<origin rpy="0 0 0" xyz="0 0.139238 0"/>
 	</joint>
 
 	<joint name="arm3_to_arm4" type="fixed">

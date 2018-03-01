@@ -8,6 +8,8 @@ Panels:
         - /Status1
         - /RobotModel1
         - /RobotModel1/Links1
+        - /RobotModel1/Links1/arm3_link1/Position1
+        - /RobotModel1/Links1/arm3_link1/Orientation1
         - /TF1
         - /TF1/Frames1
       Splitter Ratio: 0.5
@@ -66,12 +68,12 @@ Visualization Manager:
           Alpha: 1
           Show Axes: false
           Show Trail: false
-          Value: true
+          Value: false
         arm2_link:
           Alpha: 1
           Show Axes: false
           Show Trail: false
-          Value: true
+          Value: false
         arm3_link:
           Alpha: 1
           Show Axes: false
@@ -106,27 +108,27 @@ Visualization Manager:
           Alpha: 1
           Show Axes: false
           Show Trail: false
-          Value: true
+          Value: false
         body_link:
           Alpha: 1
           Show Axes: false
           Show Trail: false
-          Value: true
+          Value: false
         head_link:
           Alpha: 1
           Show Axes: false
           Show Trail: false
-          Value: true
+          Value: false
         neck_base_link:
           Alpha: 1
           Show Axes: false
           Show Trail: false
-          Value: true
+          Value: false
         neck_link:
           Alpha: 1
           Show Axes: false
           Show Trail: false
-          Value: true
+          Value: false
       Name: RobotModel
       Robot Description: robot_description
       TF Prefix: ""
@@ -139,9 +141,9 @@ Visualization Manager:
       Frames:
         All Enabled: false
         arm1_link:
-          Value: true
+          Value: false
         arm2_link:
-          Value: true
+          Value: false
         arm3_link:
           Value: true
         arm4_link:
@@ -155,15 +157,15 @@ Visualization Manager:
         arm8_link:
           Value: false
         base_link:
-          Value: true
+          Value: false
         body_link:
-          Value: true
+          Value: false
         head_link:
-          Value: true
+          Value: false
         neck_base_link:
-          Value: true
+          Value: false
         neck_link:
-          Value: true
+          Value: false
       Marker Scale: 1
       Name: TF
       Show Arrows: true
@@ -211,22 +213,22 @@ Visualization Manager:
   Views:
     Current:
       Class: rviz/Orbit
-      Distance: 1.59905
+      Distance: 0.684355
       Enable Stereo Rendering:
         Stereo Eye Separation: 0.06
         Stereo Focal Distance: 1
         Swap Stereo Eyes: false
         Value: false
       Focal Point:
-        X: 0.101806
-        Y: -0.0393386
-        Z: 0.834642
+        X: 0.374351
+        Y: 0.139811
+        Z: 0.964063
       Name: Current View
       Near Clip Distance: 0.01
-      Pitch: 0.1748
+      Pitch: 0.234797
       Target Frame: <Fixed Frame>
       Value: Orbit (rviz)
-      Yaw: 1.09358
+      Yaw: 3.49859
     Saved: ~
 Window Geometry:
   Displays:

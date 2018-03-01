@@ -31,7 +31,7 @@
 			<geometry>
         <mesh filename="package://tr1_description/meshes/arm2.dae" scale="0.1 0.1 0.1"/>
 			</geometry>
-			<origin rpy="1.5708 0 0.01" xyz="-0.110 0.0 -0.130"/>
+			<origin rpy="1.5708 0 0.01" xyz="-0.110 0.0 -0.125"/>
 		</visual>
 	</link>
 
@@ -40,7 +40,7 @@
 			<geometry>
         <mesh filename="package://tr1_description/meshes/arm3.dae" scale="0.1 0.1 0.1"/>
 			</geometry>
-			<origin rpy="0 0 0" xyz="0 0 0"/>
+			<origin rpy="1.5708 -1.5708 0" xyz="0.1 0 -0.26"/>
 		</visual>
 	</link>
 
@@ -49,7 +49,7 @@
 			<geometry>
         <mesh filename="package://tr1_description/meshes/arm4.dae" scale="0.1 0.1 0.1"/>
 			</geometry>
-			<origin rpy="0 0 0" xyz="0 0 0"/>
+			<origin rpy="0 0.0 1.5008" xyz="-0.129 -0.265 -0.002"/>
 		</visual>
 	</link>
 
@@ -58,7 +58,7 @@
 			<geometry>
         <mesh filename="package://tr1_description/meshes/arm5.dae" scale="0.1 0.1 0.1"/>
 			</geometry>
-			<origin rpy="0 0 0" xyz="0 0 0"/>
+			<origin rpy="1.7708 0.05 1.5708" xyz="0.044 -0.268 0.27"/>
 		</visual>
 	</link>
 
@@ -67,7 +67,8 @@
 			<geometry>
         <mesh filename="package://tr1_description/meshes/arm6.dae" scale="0.1 0.1 0.1"/>
 			</geometry>
-			<origin rpy="0 0 0" xyz="0 0 0"/>
+			<origin rpy="3.1415 0 0" xyz="0 0 0"/>
+			<!--<origin rpy="0 1.5708 -0.2" xyz="-0.18 .25 .28"/>-->
 		</visual>
 	</link>
 
@@ -127,7 +128,7 @@
 	<joint name="body_to_arm1" type="fixed">
 		<parent link="body_link"/>
 		<child link="arm1_link"/>
-		<origin rpy="0 0 0.261799" xyz="0.155887 0.026656 0.2075"/>
+		<origin rpy="0 0 0.261799" xyz="0.184864 0.034420 0.2075"/>
 	</joint>
 
 	<joint name="arm1_to_arm2" type="revolute">
@@ -146,28 +147,34 @@
 		<limit effort="1.0" lower="-1" upper="1.5708" velocity="0.5"/>
 	</joint>
 
-	<joint name="arm3_to_arm4" type="fixed">
+	<joint name="arm3_to_arm4" type="revolute">
 		<parent link="arm3_link"/>
 		<child link="arm4_link"/>
-		<origin rpy="0 0 0" xyz="0 0 0"/>
+		<origin rpy="0 0 0" xyz="0.238827 0 0"/>
+    <axis xyz="1 0 0"/>
+		<limit effort="1.0" lower="-3.1415" upper="3.1415" velocity="0.5"/>
 	</joint>
 
-	<joint name="arm4_to_arm5" type="fixed">
+	<joint name="arm4_to_arm5" type="revolute">
 		<parent link="arm4_link"/>
 		<child link="arm5_link"/>
-		<origin rpy="0 0 0" xyz="0 0 0"/>
+		<origin rpy="0 0 0" xyz="0.145 0 0"/>
+    <axis xyz="0 1 0"/>
+		<limit effort="1.0" lower="-3.1415" upper="3.1415" velocity="0.5"/>
 	</joint>
 
-	<joint name="arm5_to_arm6" type="fixed">
+	<joint name="arm5_to_arm6" type="revolute">
 		<parent link="arm5_link"/>
 		<child link="arm6_link"/>
-		<origin rpy="0 0 0" xyz="0 0 0"/>
+		<origin rpy="0 0 0" xyz="0.230643 0 0"/>
+    <axis xyz="1 0 0"/>
+		<limit effort="1.0" lower="-3.1415" upper="3.1415" velocity="0.5"/>
 	</joint>
 
 	<joint name="arm6_to_arm7" type="fixed">
 		<parent link="arm6_link"/>
 		<child link="arm7_link"/>
-		<origin rpy="0 0 0" xyz="0 0 0"/>
+		<origin rpy="0 0 0" xyz="0.165 0 0"/>
 	</joint>
 
 	<joint name="arm7_to_arm8" type="fixed">

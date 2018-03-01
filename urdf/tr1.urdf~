@@ -22,7 +22,7 @@
 			<geometry>
         <mesh filename="package://tr1_description/meshes/arm1.dae" scale="0.1 0.1 0.1"/>
 			</geometry>
-			<origin rpy="1.5708 0 0" xyz="-0.11 0 -0.14"/>
+			<origin rpy="0 0 3.141592" xyz="0 0 0"/>
 		</visual>
 	</link>
 
@@ -31,7 +31,7 @@
 			<geometry>
         <mesh filename="package://tr1_description/meshes/arm2.dae" scale="0.1 0.1 0.1"/>
 			</geometry>
-			<origin rpy="1.5708 0 0.01" xyz="-0.110 0.0 -0.125"/>
+			<origin rpy="0 0 0" xyz="0 0 0"/>
 		</visual>
 	</link>
 
@@ -40,7 +40,7 @@
 			<geometry>
         <mesh filename="package://tr1_description/meshes/arm3.dae" scale="0.1 0.1 0.1"/>
 			</geometry>
-			<origin rpy="1.5708 -1.5708 0" xyz="0.1 0 -0.26"/>
+			<origin rpy="3.141592 0 0" xyz="0 0 0"/>
 		</visual>
 	</link>
 
@@ -49,7 +49,7 @@
 			<geometry>
         <mesh filename="package://tr1_description/meshes/arm4.dae" scale="0.1 0.1 0.1"/>
 			</geometry>
-			<origin rpy="0 0.0 1.5008" xyz="-0.129 -0.265 -0.002"/>
+			<origin rpy="0 0 0" xyz="0 0 0"/>
 		</visual>
 	</link>
 
@@ -58,7 +58,7 @@
 			<geometry>
         <mesh filename="package://tr1_description/meshes/arm5.dae" scale="0.1 0.1 0.1"/>
 			</geometry>
-			<origin rpy="1.7708 0.05 1.5708" xyz="0.044 -0.268 0.27"/>
+			<origin rpy="0 3.141592 0" xyz="0 0 0"/>
 		</visual>
 	</link>
 
@@ -67,8 +67,7 @@
 			<geometry>
         <mesh filename="package://tr1_description/meshes/arm6.dae" scale="0.1 0.1 0.1"/>
 			</geometry>
-			<origin rpy="3.1415 0 0" xyz="0 0 0"/>
-			<!--<origin rpy="0 1.5708 -0.2" xyz="-0.18 .25 .28"/>-->
+			<origin rpy="0 0 3.141592" xyz="0 0 0"/>
 		</visual>
 	</link>
 
@@ -77,7 +76,7 @@
 			<geometry>
         <mesh filename="package://tr1_description/meshes/arm7.dae" scale="0.1 0.1 0.1"/>
 			</geometry>
-			<origin rpy="0 0 0" xyz="0 0 0"/>
+			<origin rpy="3.141592 0 0" xyz="0 0 0"/>
 		</visual>
 	</link>
 
@@ -87,6 +86,69 @@
         <mesh filename="package://tr1_description/meshes/arm8.dae" scale="0.1 0.1 0.1"/>
 			</geometry>
 			<origin rpy="0 0 0" xyz="0 0 0"/>
+		</visual>
+	</link>
+
+	<link name="gripper1_link">
+		<visual>
+			<geometry>
+        <mesh filename="package://tr1_description/meshes/gripper1.dae" scale="0.1 0.1 0.1"/>
+			</geometry>
+			<origin rpy="0 0 0" xyz="0 0 0"/>
+		</visual>
+	</link>
+
+	<link name="gripper2_link">
+		<visual>
+			<geometry>
+        <mesh filename="package://tr1_description/meshes/gripper2.dae" scale="0.1 0.1 0.1"/>
+			</geometry>
+			<origin rpy="0 0 0" xyz="0 0 0"/>
+		</visual>
+	</link>
+
+	<link name="gripper3_link">
+		<visual>
+			<geometry>
+        <mesh filename="package://tr1_description/meshes/gripper3.dae" scale="0.1 0.1 0.1"/>
+			</geometry>
+			<origin rpy="0 0 0" xyz="0 0 0"/>
+		</visual>
+	</link>
+
+	<link name="gripper4l_link">
+		<visual>
+			<geometry>
+        <mesh filename="package://tr1_description/meshes/gripper4.dae" scale="0.1 0.1 0.1"/>
+			</geometry>
+			<origin rpy="0 0 0" xyz="0 0 0"/>
+		</visual>
+	</link>
+
+	<link name="gripper4r_link">
+		<visual>
+			<geometry>
+        <mesh filename="package://tr1_description/meshes/gripper4.dae" scale="0.1 0.1 0.1"/>
+			</geometry>
+			<origin rpy="0 0 0" xyz="0 0 0"/>
+		</visual>
+	</link>
+
+	<link name="gripper5_link">
+		<visual>
+			<geometry>
+        <mesh filename="package://tr1_description/meshes/gripper5.dae" scale="0.1 0.1 0.1"/>
+			</geometry>
+			<origin rpy="0 0 0" xyz="0 0 0"/>
+		</visual>
+	</link>
+
+	<link name="gripper6_link">
+		<visual>
+			<geometry>
+        <mesh filename="package://tr1_description/meshes/gripper6.dae" scale="0.1 0.1 0.1"/>
+			</geometry>
+			<origin rpy="0 0 3.141592" xyz="0 0 0"/>
 		</visual>
 	</link>
 
@@ -128,7 +190,7 @@
 	<joint name="body_to_arm1" type="fixed">
 		<parent link="body_link"/>
 		<child link="arm1_link"/>
-		<origin rpy="0 0 0.261799" xyz="0.184864 0.034420 0.2075"/>
+		<origin rpy="0 0 0.261799" xyz="0.184864 0.034420 0.20575"/>
 	</joint>
 
 	<joint name="arm1_to_arm2" type="revolute">
@@ -144,7 +206,7 @@
 		<child link="arm3_link"/>
 		<origin rpy="0 0 0" xyz="0.139238 0 0"/>
     <axis xyz="0 1 0"/>
-		<limit effort="1.0" lower="-1" upper="1.5708" velocity="0.5"/>
+		<limit effort="1.0" lower="-1.5708" upper="1.5708" velocity="0.5"/>
 	</joint>
 
 	<joint name="arm3_to_arm4" type="revolute">
@@ -160,7 +222,7 @@
 		<child link="arm5_link"/>
 		<origin rpy="0 0 0" xyz="0.145 0 0"/>
     <axis xyz="0 1 0"/>
-		<limit effort="1.0" lower="-3.1415" upper="3.1415" velocity="0.5"/>
+		<limit effort="1.0" lower="-1.75" upper="1.75" velocity="0.5"/>
 	</joint>
 
 	<joint name="arm5_to_arm6" type="revolute">
@@ -171,16 +233,79 @@
 		<limit effort="1.0" lower="-3.1415" upper="3.1415" velocity="0.5"/>
 	</joint>
 
-	<joint name="arm6_to_arm7" type="fixed">
+	<joint name="arm6_to_arm7" type="revolute">
 		<parent link="arm6_link"/>
 		<child link="arm7_link"/>
 		<origin rpy="0 0 0" xyz="0.165 0 0"/>
+    <axis xyz="0 1 0"/>
+		<limit effort="1.0" lower="-1.75" upper="1.75" velocity="0.5"/>
 	</joint>
 
-	<joint name="arm7_to_arm8" type="fixed">
+	<joint name="arm7_to_arm8" type="revolute">
 		<parent link="arm7_link"/>
 		<child link="arm8_link"/>
-		<origin rpy="0 0 0" xyz="0 0 0"/>
+		<origin rpy="0 0 0" xyz="0.045311 0 0"/>
+    <axis xyz="1 0 0"/>
+		<limit effort="1.0" lower="-2" upper="2" velocity="0.5"/>
+	</joint>
+
+	<joint name="arm8_to_gripper1" type="fixed">
+		<parent link="arm8_link"/>
+		<child link="gripper1_link"/>
+		<origin rpy="0 0 0" xyz="0.04619 0 0"/>
+	</joint>
+
+	<joint name="gripper" type="revolute">
+		<parent link="gripper1_link"/>
+		<child link="gripper2_link"/>
+		<origin rpy="0 0 -1.5708" xyz="0.024 -0.014 0"/>
+    <axis xyz="0 0 1"/>
+		<limit effort="1.0" lower="0" upper="1.5708" velocity="0.5"/>
+	</joint>
+
+	<joint name="gripper1_to_gripper3" type="revolute">
+		<parent link="gripper1_link"/>
+		<child link="gripper3_link"/>
+		<mimic joint="gripper" multiplier="-1" offset="0"/>
+		<origin rpy="0 0 1.5708" xyz="0.024 0.014 0"/>
+    <axis xyz="0 0 1"/>
+		<limit effort="1.0" lower="-3.1415" upper="3.1415" velocity="0.5"/>
+	</joint>
+
+	<joint name="gripper1_to_gripper4l" type="revolute">
+		<parent link="gripper1_link"/>
+		<child link="gripper4l_link"/>
+		<origin rpy="0 0 -1.5708" xyz="0.044 0.007 0"/>
+		<mimic joint="gripper" multiplier="-1" offset="0"/>
+    <axis xyz="0 0 1"/>
+		<limit effort="1.0" lower="-3.1415" upper="3.1415" velocity="0.5"/>
+	</joint>
+
+	<joint name="gripper1_to_gripper4r" type="revolute">
+		<parent link="gripper1_link"/>
+		<child link="gripper4r_link"/>
+		<origin rpy="0 0 1.5708" xyz="0.044 -0.007 0"/>
+		<mimic joint="gripper" multiplier="1" offset="0"/>
+    <axis xyz="0 0 1"/>
+		<limit effort="1.0" lower="-3.1415" upper="3.1415" velocity="0.5"/>
+	</joint>
+
+	<joint name="gripper2_to_gripper6" type="revolute">
+		<parent link="gripper2_link"/>
+		<child link="gripper6_link"/>
+		<origin rpy="0 0 0" xyz="0.040 0 0"/>
+		<mimic joint="gripper" multiplier="-1" offset="0"/>
+    <axis xyz="0 0 1"/>
+		<limit effort="1.0" lower="-3.1415" upper="3.1415" velocity="0.5"/>
+	</joint>
+
+	<joint name="gripper3_to_gripper5" type="revolute">
+		<parent link="gripper3_link"/>
+		<child link="gripper5_link"/>
+		<origin rpy="0 0 0" xyz="0.040 0 0"/>
+		<mimic joint="gripper" multiplier="1" offset="0"/>
+    <axis xyz="0 0 1"/>
+		<limit effort="1.0" lower="-3.1415" upper="3.1415" velocity="0.5"/>
 	</joint>
 
 	<joint name="body_to_neck_base" type="fixed">

@@ -119,6 +119,36 @@ Visualization Manager:
           Show Axes: false
           Show Trail: false
           Value: true
+        gripper2_link:
+          Alpha: 1
+          Show Axes: false
+          Show Trail: false
+          Value: true
+        gripper3_link:
+          Alpha: 1
+          Show Axes: false
+          Show Trail: false
+          Value: true
+        gripper4l_link:
+          Alpha: 1
+          Show Axes: false
+          Show Trail: false
+          Value: true
+        gripper4r_link:
+          Alpha: 1
+          Show Axes: false
+          Show Trail: false
+          Value: true
+        gripper5_link:
+          Alpha: 1
+          Show Axes: false
+          Show Trail: false
+          Value: true
+        gripper6_link:
+          Alpha: 1
+          Show Axes: false
+          Show Trail: false
+          Value: true
         head_link:
           Alpha: 1
           Show Axes: false
@@ -158,15 +188,27 @@ Visualization Manager:
         arm6_link:
           Value: true
         arm7_link:
-          Value: true
+          Value: false
         arm8_link:
-          Value: true
+          Value: false
         base_link:
           Value: true
         body_link:
           Value: true
         gripper1_link:
-          Value: true
+          Value: false
+        gripper2_link:
+          Value: false
+        gripper3_link:
+          Value: false
+        gripper4l_link:
+          Value: false
+        gripper4r_link:
+          Value: false
+        gripper5_link:
+          Value: false
+        gripper6_link:
+          Value: false
         head_link:
           Value: true
         neck_base_link:
@@ -190,7 +232,16 @@ Visualization Manager:
                         arm7_link:
                           arm8_link:
                             gripper1_link:
-                              {}
+                              gripper2_link:
+                                gripper6_link:
+                                  {}
+                              gripper3_link:
+                                gripper5_link:
+                                  {}
+                              gripper4l_link:
+                                {}
+                              gripper4r_link:
+                                {}
             neck_base_link:
               neck_link:
                 head_link:
@@ -221,22 +272,22 @@ Visualization Manager:
   Views:
     Current:
       Class: rviz/Orbit
-      Distance: 1.1075
+      Distance: 1.05747
       Enable Stereo Rendering:
         Stereo Eye Separation: 0.06
         Stereo Focal Distance: 1
         Swap Stereo Eyes: false
         Value: false
       Focal Point:
-        X: 0.836281
-        Y: -0.291464
-        Z: 0.518284
+        X: 0.712826
+        Y: -0.00562364
+        Z: 0.536879
       Name: Current View
       Near Clip Distance: 0.01
-      Pitch: 0.614801
+      Pitch: 0.664801
       Target Frame: <Fixed Frame>
       Value: Orbit (rviz)
-      Yaw: 1.04857
+      Yaw: 0.60857
     Saved: ~
 Window Geometry:
   Displays:

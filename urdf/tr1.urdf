@@ -98,6 +98,60 @@
 		</visual>
 	</link>
 
+	<link name="gripper2_link">
+		<visual>
+			<geometry>
+        <mesh filename="package://tr1_description/meshes/gripper2.dae" scale="0.1 0.1 0.1"/>
+			</geometry>
+			<origin rpy="0 0 0" xyz="0 0 0"/>
+		</visual>
+	</link>
+
+	<link name="gripper3_link">
+		<visual>
+			<geometry>
+        <mesh filename="package://tr1_description/meshes/gripper3.dae" scale="0.1 0.1 0.1"/>
+			</geometry>
+			<origin rpy="0 0 0" xyz="0 0 0"/>
+		</visual>
+	</link>
+
+	<link name="gripper4l_link">
+		<visual>
+			<geometry>
+        <mesh filename="package://tr1_description/meshes/gripper4.dae" scale="0.1 0.1 0.1"/>
+			</geometry>
+			<origin rpy="0 0 0" xyz="0 0 0"/>
+		</visual>
+	</link>
+
+	<link name="gripper4r_link">
+		<visual>
+			<geometry>
+        <mesh filename="package://tr1_description/meshes/gripper4.dae" scale="0.1 0.1 0.1"/>
+			</geometry>
+			<origin rpy="0 0 0" xyz="0 0 0"/>
+		</visual>
+	</link>
+
+	<link name="gripper5_link">
+		<visual>
+			<geometry>
+        <mesh filename="package://tr1_description/meshes/gripper5.dae" scale="0.1 0.1 0.1"/>
+			</geometry>
+			<origin rpy="0 0 0" xyz="0 0 0"/>
+		</visual>
+	</link>
+
+	<link name="gripper6_link">
+		<visual>
+			<geometry>
+        <mesh filename="package://tr1_description/meshes/gripper6.dae" scale="0.1 0.1 0.1"/>
+			</geometry>
+			<origin rpy="0 0 3.141592" xyz="0 0 0"/>
+		</visual>
+	</link>
+
 	<link name="neck_base_link">
 		<visual>
 			<geometry>
@@ -199,6 +253,42 @@
 		<parent link="arm8_link"/>
 		<child link="gripper1_link"/>
 		<origin rpy="0 0 0" xyz="0.04619 0 0"/>
+	</joint>
+
+	<joint name="gripper1_to_gripper2" type="fixed">
+		<parent link="gripper1_link"/>
+		<child link="gripper2_link"/>
+		<origin rpy="0 0 -1.5708" xyz="0.024 -0.014 0"/>
+	</joint>
+
+	<joint name="gripper1_to_gripper3" type="fixed">
+		<parent link="gripper1_link"/>
+		<child link="gripper3_link"/>
+		<origin rpy="0 0 1.5708" xyz="0.024 0.014 0"/>
+	</joint>
+
+	<joint name="gripper1_to_gripper4l" type="fixed">
+		<parent link="gripper1_link"/>
+		<child link="gripper4l_link"/>
+		<origin rpy="0 0 -1.5708" xyz="0.044 0.007 0"/>
+	</joint>
+
+	<joint name="gripper1_to_gripper4r" type="fixed">
+		<parent link="gripper1_link"/>
+		<child link="gripper4r_link"/>
+		<origin rpy="0 0 1.5708" xyz="0.044 -0.007 0"/>
+	</joint>
+
+	<joint name="gripper2_to_gripper6" type="fixed">
+		<parent link="gripper2_link"/>
+		<child link="gripper6_link"/>
+		<origin rpy="0 0 0" xyz="0.040 0 0"/>
+	</joint>
+
+	<joint name="gripper3_to_gripper5" type="fixed">
+		<parent link="gripper3_link"/>
+		<child link="gripper5_link"/>
+		<origin rpy="0 0 0" xyz="0.040 0 0"/>
 	</joint>
 
 	<joint name="body_to_neck_base" type="fixed">

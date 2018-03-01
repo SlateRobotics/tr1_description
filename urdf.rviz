@@ -59,7 +59,7 @@ Visualization Manager:
       Collision Enabled: false
       Enabled: true
       Links:
-        All Links Enabled: false
+        All Links Enabled: true
         Expand Joint Details: false
         Expand Link Details: false
         Expand Tree: false
@@ -68,12 +68,12 @@ Visualization Manager:
           Alpha: 1
           Show Axes: false
           Show Trail: false
-          Value: false
+          Value: true
         arm2_link:
           Alpha: 1
           Show Axes: false
           Show Trail: false
-          Value: false
+          Value: true
         arm3_link:
           Alpha: 1
           Show Axes: false
@@ -83,52 +83,57 @@ Visualization Manager:
           Alpha: 1
           Show Axes: false
           Show Trail: false
-          Value: false
+          Value: true
         arm5_link:
           Alpha: 1
           Show Axes: false
           Show Trail: false
-          Value: false
+          Value: true
         arm6_link:
           Alpha: 1
           Show Axes: false
           Show Trail: false
-          Value: false
+          Value: true
         arm7_link:
           Alpha: 1
           Show Axes: false
           Show Trail: false
-          Value: false
+          Value: true
         arm8_link:
           Alpha: 1
           Show Axes: false
           Show Trail: false
-          Value: false
+          Value: true
         base_link:
           Alpha: 1
           Show Axes: false
           Show Trail: false
-          Value: false
+          Value: true
         body_link:
           Alpha: 1
           Show Axes: false
           Show Trail: false
-          Value: false
+          Value: true
+        gripper1_link:
+          Alpha: 1
+          Show Axes: false
+          Show Trail: false
+          Value: true
         head_link:
           Alpha: 1
           Show Axes: false
           Show Trail: false
-          Value: false
+          Value: true
         neck_base_link:
           Alpha: 1
           Show Axes: false
           Show Trail: false
-          Value: false
+          Value: true
         neck_link:
           Alpha: 1
           Show Axes: false
           Show Trail: false
-          Value: false
+          Value: true
       Name: RobotModel
       Robot Description: robot_description
       TF Prefix: ""
@@ -141,31 +146,33 @@ Visualization Manager:
       Frames:
         All Enabled: false
         arm1_link:
-          Value: false
+          Value: true
         arm2_link:
-          Value: false
+          Value: true
         arm3_link:
           Value: true
         arm4_link:
-          Value: false
+          Value: true
         arm5_link:
-          Value: false
+          Value: true
         arm6_link:
-          Value: false
+          Value: true
         arm7_link:
-          Value: false
+          Value: true
         arm8_link:
-          Value: false
+          Value: true
         base_link:
-          Value: false
+          Value: true
         body_link:
-          Value: false
+          Value: true
+        gripper1_link:
+          Value: true
         head_link:
-          Value: false
+          Value: true
         neck_base_link:
-          Value: false
+          Value: true
         neck_link:
-          Value: false
+          Value: true
       Marker Scale: 1
       Name: TF
       Show Arrows: true
@@ -182,7 +189,8 @@ Visualization Manager:
                       arm6_link:
                         arm7_link:
                           arm8_link:
-                            {}
+                            gripper1_link:
+                              {}
             neck_base_link:
               neck_link:
                 head_link:
@@ -213,22 +221,22 @@ Visualization Manager:
   Views:
     Current:
       Class: rviz/Orbit
-      Distance: 0.684355
+      Distance: 1.1075
       Enable Stereo Rendering:
         Stereo Eye Separation: 0.06
         Stereo Focal Distance: 1
         Swap Stereo Eyes: false
         Value: false
       Focal Point:
-        X: 0.374351
-        Y: 0.139811
-        Z: 0.964063
+        X: 0.836281
+        Y: -0.291464
+        Z: 0.518284
       Name: Current View
       Near Clip Distance: 0.01
-      Pitch: 0.234797
+      Pitch: 0.614801
       Target Frame: <Fixed Frame>
       Value: Orbit (rviz)
-      Yaw: 3.49859
+      Yaw: 1.04857
     Saved: ~
 Window Geometry:
   Displays:

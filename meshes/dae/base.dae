@@ -9,6 +9,39 @@
         <modified>Sat Mar 3 18:29:15 2018 GMT</modified>
         <up_axis>Y_UP</up_axis>
     </asset>
+		<library_effects>
+		  <effect id="m0DefaultMaterial-fx" name="m0DefaultMaterial">
+		    <profile_COMMON>
+		      <technique sid="standard">
+		        <phong>
+		          <emission>
+		            <color sid="emission">0   0   0   0</color>
+		          </emission>
+		          <ambient>
+		            <color sid="ambient">0.05   0.05   0.05   1</color>
+		          </ambient>
+		          <diffuse>
+		            <color sid="diffuse">1   1   1   1</color>
+		          </diffuse>
+		          <specular>
+		            <color sid="specular">1   1   1   1</color>
+		          </specular>
+		          <shininess>
+		            <float sid="shininess">16</float>
+		          </shininess>
+		          <reflective>
+		            <color sid="reflective">0   0   0   0</color>
+		          </reflective>
+		        </phong>
+		      </technique>
+		    </profile_COMMON>
+		  </effect>
+		</library_effects>
+		<library_materials>
+		  <material id="m0DefaultMaterial" name="m0DefaultMaterial">
+		    <instance_effect url="#m0DefaultMaterial-fx"/>
+		  </material>
+		</library_materials>
     <library_geometries>
         <geometry id="shape0-lib" name="shape0">
             <mesh>
@@ -46,7 +79,7 @@
                 <vertices id="shape0-lib-vertices">
                     <input semantic="POSITION" source="#shape0-lib-positions"/>
                 </vertices>
-                <triangles count="848">
+                <triangles count="848" material="Color">
                     <input offset="0" semantic="VERTEX" source="#shape0-lib-vertices"/>
                     <input offset="1" semantic="COLOR" source="#shape0-lib-vcolor"/>
                     <input offset="2" semantic="NORMAL" source="#shape0-lib-normals"/>
@@ -55,14 +88,21 @@
             </mesh>
         </geometry>
     </library_geometries>
-    <library_visual_scenes>
-        <visual_scene id="VisualSceneNode" name="VisualScene">
-            <node id="node" name="node">
-                <instance_geometry url="#shape0-lib"/>
-            </node>
-        </visual_scene>
-    </library_visual_scenes>
-    <scene>
-        <instance_visual_scene url="#VisualSceneNode"/>
-    </scene>
+		<library_visual_scenes>
+		  <visual_scene id="myScene" name="myScene">
+		    <node id="<STL_BINARY>" name="<STL_BINARY>">
+		      <matrix>1 0 0 0 0 1 0 0 0 0 1 0 0 0 0 1</matrix>
+		      <instance_geometry url="#shape0-lib">
+		        <bind_material>
+		          <technique_common>
+		            <instance_material symbol="theresonlyone" target="#m0DefaultMaterial" />
+		          </technique_common>
+		        </bind_material>
+		      </instance_geometry>
+		    </node>
+		  </visual_scene>
+		</library_visual_scenes>
+		<scene>
+		  <instance_visual_scene url="#myScene" />
+		</scene>
 </COLLADA>

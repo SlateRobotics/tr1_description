@@ -5,6 +5,9 @@
 			<geometry>
         <mesh filename="package://tr1_description/meshes/dae/base.dae" scale="0.001 0.001 0.001"/>
 			</geometry>
+      <material name="white">
+        <color rgba="1 1 1 1"/>
+      </material>
 			<origin rpy="0 0 3.141592" />
 		</visual>
 	</link>

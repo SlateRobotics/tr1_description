@@ -1,10 +1,15 @@
 <robot name="tr1">
 
+  <material name="white">
+    <color rgba="1 1 1 1"/>
+  </material>
+
 	<link name="base_link">
 		<visual>
 			<geometry>
         <mesh filename="package://tr1_description/meshes/dae/base.dae" scale="0.001 0.001 0.001"/>
 			</geometry>
+			<material name="white"/>
 			<origin rpy="0 0 3.141592" />
 		</visual>
 	</link>
@@ -180,7 +185,7 @@
 			<geometry>
         <mesh filename="package://tr1_description/meshes/dae/gripper6.dae" scale="0.001 0.001 0.001"/>
 			</geometry>
-			<origin rpy="0 0 0" />
+			<origin rpy="3.141592 0 1.5708" />
 		</visual>
 	</link>
 

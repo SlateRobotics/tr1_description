@@ -10,7 +10,6 @@ Panels:
         - /RobotModel1/Links1
         - /RobotModel1/Links1/arm3_link1/Position1
         - /RobotModel1/Links1/arm3_link1/Orientation1
-        - /TF1
         - /TF1/Frames1
       Splitter Ratio: 0.5
     Tree Height: 787
@@ -234,7 +233,7 @@ Visualization Manager:
         neck_base_link:
           Value: false
         neck_link:
-          Value: true
+          Value: false
         wheel1_link:
           Value: false
         wheel2_link:
@@ -308,22 +307,22 @@ Visualization Manager:
   Views:
     Current:
       Class: rviz/Orbit
-      Distance: 1.23376
+      Distance: 3.11034
       Enable Stereo Rendering:
         Stereo Eye Separation: 0.06
         Stereo Focal Distance: 1
         Swap Stereo Eyes: false
         Value: false
       Focal Point:
-        X: 0.0459442
-        Y: -0.00219472
-        Z: 1.16517
+        X: 0.30402
+        Y: 0.202683
+        Z: 0.630189
       Name: Current View
       Near Clip Distance: 0.01
-      Pitch: 0.6548
+      Pitch: 0.3598
       Target Frame: <Fixed Frame>
       Value: Orbit (rviz)
-      Yaw: 5.70993
+      Yaw: 1.01176
     Saved: ~
 Window Geometry:
   Displays:

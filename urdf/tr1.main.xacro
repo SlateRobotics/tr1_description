@@ -1,38 +1,303 @@
 <?xml version="1.0"?>
 <robot xmlns:xacro="http://www.ros.org/wiki/xacro" name="tr1">
 
-	<!-- Include the parameters xacro file -->
-	<xacro:include filename="$(find tr1_description)/urdf/tr1.parameters.xacro"/>
-
 	<!-- Include macros for creating all links and joints -->
-	<xacro:include filename="$(find tr1_description>/urdf/tr1.macros.xacro"/>
+	<xacro:include filename="$(find tr1_description)/urdf/tr1.macros.xacro"/>
 
-	<!-- Camera in separate file for readability -->
-	<xacro:include filename="$(find tr1_description)/urdf/tr1.camera.xacro"/>
 
-	<!-- Include gazebo elements -->
-	<xacro:include filename="$(find tr1_description)/urdf/tr1.gazebo.xacro"/>
+	<!-- Main body links -->
 
-	<!-- Create a spawn link so that the robot can be away from the origin -->
-	<link name="spawn_link"/>
-
-	<!-- Create the robot chassis -->
-	<link name="robot_base">
-
-		<!-- Create the base visual -->
+	<link name="base_link">
 		<visual>
-			<mesh filename="package://tr1_description/meshes/base.dae" scale="0.1 0.1 0.1"/>
+			<geometry>
+        <mesh filename="package://tr1_description/meshes/dae/base.dae" scale="0.001 0.001 0.001"/>
+			</geometry>
+      <material name="white">
+        <color rgba="1 1 1 1"/>
+      </material>
+			<origin rpy="0 0 3.141592" />
 		</visual>
-
-		<!-- Create the base collision shape -->
 		<collision>
-			<xacro:create_cylinder_geometry radius="${base_radius}" length="${base_height}"/>
+			<geometry>
+        <mesh filename="package://tr1_description/meshes/dae/base.dae" scale="0.001 0.001 0.001"/>
+			</geometry>
+      <material name="white">
+        <color rgba="1 1 1 1"/>
+      </material>
+			<origin rpy="0 0 3.141592" />
 		</collision>
-
-		<!-- Create the base's inertial matrix -->
-		<xacro:create_cylinder_inertial
-			mass="${base_mass}" radius="${base_radius}" length="${base_height}"/>
-
 	</link>
 
-	
+	<link name="wheel1_link">
+		<visual>
+			<geometry>
+        <mesh filename="package://tr1_description/meshes/dae/wheel.dae" scale="0.001 0.001 0.001"/>
+			</geometry>
+			<origin rpy="1.5708 0 0" />
+		</visual>
+		<collision>
+			<geometry>
+        <mesh filename="package://tr1_description/meshes/dae/wheel.dae" scale="0.001 0.001 0.001"/>
+			</geometry>
+			<origin rpy="1.5708 0 0" />
+		</collision>
+	</link>
+
+	<link name="wheel2_link">
+		<visual>
+			<geometry>
+        <mesh filename="package://tr1_description/meshes/dae/wheel.dae" scale="0.001 0.001 0.001"/>
+			</geometry>
+			<origin rpy="1.5708 0 0" />
+		</visual>
+		<collision>
+			<geometry>
+        <mesh filename="package://tr1_description/meshes/dae/wheel.dae" scale="0.001 0.001 0.001"/>
+			</geometry>
+			<origin rpy="1.5708 0 0" />
+		</collision>
+	</link>
+
+	<link name="wheel3_link">
+		<visual>
+			<geometry>
+        <mesh filename="package://tr1_description/meshes/dae/wheel.dae" scale="0.001 0.001 0.001"/>
+			</geometry>
+			<origin rpy="1.5708 0 0" />
+		</visual>
+		<collision>
+			<geometry>
+        <mesh filename="package://tr1_description/meshes/dae/wheel.dae" scale="0.001 0.001 0.001"/>
+			</geometry>
+			<origin rpy="1.5708 0 0" />
+		</collision>
+	</link>
+
+	<link name="wheel4_link">
+		<visual>
+			<geometry>
+        <mesh filename="package://tr1_description/meshes/dae/wheel.dae" scale="0.001 0.001 0.001"/>
+			</geometry>
+			<origin rpy="1.5708 0 0" />
+		</visual>
+		<collision>
+			<geometry>
+        <mesh filename="package://tr1_description/meshes/dae/wheel.dae" scale="0.001 0.001 0.001"/>
+			</geometry>
+			<origin rpy="1.5708 0 0" />
+		</collision>
+	</link>
+
+	<link name="body_link">
+		<visual>
+			<geometry>
+        <mesh filename="package://tr1_description/meshes/dae/body.dae" scale="0.001 0.001 0.001"/>
+			</geometry>
+			<origin rpy="0 0 3.141592"/>
+		</visual>
+		<collision>
+			<geometry>
+        <mesh filename="package://tr1_description/meshes/dae/body.dae" scale="0.001 0.001 0.001"/>
+			</geometry>
+			<origin rpy="0 0 3.141592"/>
+		</collision>
+	</link>
+
+	<!-- Arm1 Macro calls -->
+
+	<xacro:create_arm1 reflect_lr="-1" prefix="left" parent_name="body"/>
+	<xacro:create_arm1 reflect_lr="1" prefix="right" parent_name="body"/>
+
+	<!-- Create Right arm2 -->
+
+	<link name="right_arm2_link">
+		<visual>
+			<geometry>
+        <mesh filename="package://tr1_description/meshes/dae/arm2.dae" scale="0.001 0.001 0.001"/>
+			</geometry>
+			<origin rpy="1.5708 0 0" />
+		</visual>
+		<collision>
+			<geometry>
+        <mesh filename="package://tr1_description/meshes/dae/arm2.dae" scale="0.001 0.001 0.001"/>
+			</geometry>
+			<origin rpy="1.5708 0 0" />
+		</collision>
+	</link>
+
+	<joint name="arm1_to_right_arm2" type="revolute">
+		<parent link="right_arm1_link"/>
+		<child link="right_arm2_link"/>
+		<origin xyz="0 0 -0.007"/>
+    <axis xyz="0 0 1"/>
+		<limit effort="1.0" lower="-1" upper="1.5708" velocity="0.5"/>
+	</joint>
+
+	<!-- Create Left arm2 -->
+	<link name="left_arm2_link">
+		<visual>
+			<geometry>
+        <mesh filename="package://tr1_description/meshes/dae/arm2.dae" scale="0.001 0.001 0.001"/>
+			</geometry>
+			<origin rpy="-1.5708 0 0" />
+		</visual>
+		<collision>
+			<geometry>
+        <mesh filename="package://tr1_description/meshes/dae/arm2.dae" scale="0.001 0.001 0.001"/>
+			</geometry>
+			<origin rpy="-1.5708 0 0" />
+		</collision>
+	</link>
+
+	<joint name="arm1_to_left_arm2" type="revolute">
+		<parent link="left_arm1_link"/>
+		<child link="left_arm2_link"/>
+		<origin xyz="0 0 -0.007"/>
+    <axis xyz="0 0 1"/>
+		<limit effort="1.0" lower="1.5708" upper="-1" velocity="0.5"/>
+	</joint>
+
+	<!-- Arm3 through Gripper1 Macro Calls -->
+
+	<xacro:create_arm3 reflect_lr="-1" prefix="left" parent_name="body"/>
+	<xacro:create_arm3 reflect_lr="1" prefix="right" parent_name="body"/>
+	<xacro:create_arm4 reflect_lr="-1" prefix="left" parent_name="body"/>
+	<xacro:create_arm4 reflect_lr="1" prefix="right" parent_name="body"/>
+	<xacro:create_arm5 reflect_lr="-1" prefix="left" parent_name="body"/>
+	<xacro:create_arm5 reflect_lr="1" prefix="right" parent_name="body"/>
+	<xacro:create_arm6 reflect_lr="-1" prefix="left" parent_name="body"/>
+	<xacro:create_arm6 reflect_lr="1" prefix="right" parent_name="body"/>
+	<xacro:create_arm7 reflect_lr="-1" prefix="left" parent_name="body"/>
+	<xacro:create_arm7 reflect_lr="1" prefix="right" parent_name="body"/>
+	<xacro:create_arm8 reflect_lr="-1" prefix="left" parent_name="body"/>
+	<xacro:create_arm8 reflect_lr="1" prefix="right" parent_name="body"/>
+	<xacro:create_gripper1 reflect_lr="-1" prefix="left" parent_name="body"/>
+	<xacro:create_gripper1 reflect_lr="1" prefix="right" parent_name="body"/>
+
+	<!-- Create Right Gripper2 -->
+	<link name="riht_gripper2_link">
+		<visual>
+			<geometry>
+        <mesh filename="package://tr1_description/meshes/dae/gripper2.dae" scale="0.001 0.001 0.001"/>
+			</geometry>
+		</visual>
+		<collision>
+			<geometry>
+        <mesh filename="package://tr1_description/meshes/dae/gripper2.dae" scale="0.001 0.001 0.001"/>
+			</geometry>
+		</collision>
+	</link>
+
+	<joint name="right_gripper" type="revolute">
+		<parent link="gripper1_link"/>
+		<child link="right_gripper2_link"/>
+		<origin rpy="0 0 -1.5708" xyz="0.024 -0.014 0"/>
+    <axis xyz="0 0 1"/>
+		<limit effort="1.0" lower="0" upper="1.5708" velocity="0.5"/>
+	</joint>
+
+	<!-- Create Left Gripper2 -->
+	<link name="left_gripper2_link">
+		<visual>
+			<geometry>
+        <mesh filename="package://tr1_description/meshes/dae/gripper2.dae" scale="0.001 0.001 0.001"/>
+			</geometry>
+		</visual>
+		<collision>
+			<geometry>
+        <mesh filename="package://tr1_description/meshes/dae/gripper2.dae" scale="0.001 0.001 0.001"/>
+			</geometry>
+		</collision>
+	</link>
+
+	<joint name="left_gripper" type="revolute">
+		<parent link="gripper1_link"/>
+		<child link="left_gripper2_link"/>
+		<origin rpy="0 0 -1.5708" xyz="-0.024 -0.014 0"/>
+    <axis xyz="0 0 1"/>
+		<limit effort="1.0" lower="1.5708" upper="0" velocity="0.5"/>
+	</joint>
+
+	<!-- Create Gripper3 - Gripper6 Macro Calls -->
+	<xacro:create_gripper3 reflect_lr="-1" prefix="left" parent_name="body"/>
+	<xacro:create_gripper3 reflect_lr="1" prefix="right" parent_name="body"/>
+	<xacro:create_gripper4r reflect_lr="-1" prefix="left" parent_name="body"/>
+	<xacro:create_gripper4r reflect_lr="1" prefix="right" parent_name="body"/>
+	<xacro:create_gripper4l reflect_lr="-1" prefix="left" parent_name="body"/>
+	<xacro:create_gripper4l reflect_lr="1" prefix="right" parent_name="body"/>
+	<xacro:create_gripper5 reflect_lr="-1" prefix="left" parent_name="body"/>
+	<xacro:create_gripper5 reflect_lr="1" prefix="right" parent_name="body"/>
+	<xacro:create_gripper6 reflect_lr="-1" prefix="left" parent_name="body"/>
+	<xacro:create_gripper6 reflect_lr="1" prefix="right" parent_name="body"/>
+
+	<!-- Robot Neck and Head -->
+	<link name="neck_base_link">
+		<visual>
+			<geometry>
+        <mesh filename="package://tr1_description/meshes/dae/neck_base.dae" scale="0.001 0.001 0.001"/>
+			</geometry>
+			<origin rpy="1.5708 0 0"/>
+		</visual>
+		<collision>
+			<geometry>
+        <mesh filename="package://tr1_description/meshes/dae/neck_base.dae" scale="0.001 0.001 0.001"/>
+			</geometry>
+			<origin rpy="1.5708 0 0"/>
+		</collision>
+	</link>
+
+	<link name="neck_link">
+		<visual>
+			<geometry>
+        <mesh filename="package://tr1_description/meshes/dae/neck.dae" scale="0.001 0.001 0.001"/>
+			</geometry>
+			<origin rpy="1.5708 0 0"/>
+		</visual>
+		<collision>
+			<geometry>
+        <mesh filename="package://tr1_description/meshes/dae/neck.dae" scale="0.001 0.001 0.001"/>
+			</geometry>
+			<origin rpy="1.5708 0 0"/>
+		</collision>
+	</link>
+
+	<link name="head_link">
+		<visual>
+			<geometry>
+        <mesh filename="package://tr1_description/meshes/dae/head.dae" scale="0.001 0.001 0.001"/>
+			</geometry>
+			<origin rpy="0 -1.5708 -1.5708"/>
+		</visual>
+		<collision>
+			<geometry>
+        <mesh filename="package://tr1_description/meshes/dae/head.dae" scale="0.001 0.001 0.001"/>
+			</geometry>
+			<origin rpy="0 -1.5708 -1.5708"/>
+		</collision>
+	</link>
+
+	<joint name="body_to_neck_base" type="fixed">
+		<parent link="body_link"/>
+		<child link="neck_base_link"/>
+		<origin xyz="0 -0.017 0.365"/>
+	</joint>
+
+	<joint name="neck_base_to_neck" type="revolute">
+		<parent link="neck_base_link"/>
+		<child link="neck_link"/>
+		<origin xyz="0 0 0.035"/>
+    <axis xyz="0 0 1"/>
+		<limit effort="1.0" lower="-3.1415" upper="3.1415" velocity="0.5"/>
+	</joint>
+
+	<joint name="neck_to_head" type="revolute">
+		<parent link="neck_link"/>
+		<child link="head_link"/>
+		<origin xyz="0 0.090789 0.09"/>
+    <axis xyz="1 0 0"/>
+		<limit effort="1.0" lower="-0.9" upper="0.4" velocity="0.5"/>
+	</joint>
+
+</robot>
+
+

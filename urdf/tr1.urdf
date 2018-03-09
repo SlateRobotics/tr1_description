@@ -380,7 +380,7 @@
 	<joint name="neck_base_to_neck" type="revolute">
 		<parent link="neck_base_link"/>
 		<child link="neck_link"/>
-		<origin xyz="0 0 0.033"/>
+		<origin xyz="0 0 0.035"/>
     <axis xyz="0 0 1"/>
 		<limit effort="1.0" lower="-3.1415" upper="3.1415" velocity="0.5"/>
 	</joint>

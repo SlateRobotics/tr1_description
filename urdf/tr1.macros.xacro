@@ -1,75 +1,520 @@
 <?xml version="1.0"?>
 <robot smlns:xacr="http://www.ros.org/wiki/xacro" name="tr1">
 
-	<!-- Create cylinder geometry -->
-	<xacro:macro name="create_cylinder_geometry" params="radius length">
-		<origin xyz="0 0 0" rpy="0 0 0"/>
-		<geometry>
-			<cylinder radius="${radius}" length="${length}"/>
-		</geometry>
-	</xacro:macro>
+	<xacro:property name="pi" value="3.141592"/>
 
-	<!-- Macro for creating a cylinder inertial element -->
-	<xacro:macro name="create_cylinder_inertial" params="mass radius length">
-		<inertial>
-			<mass value="${mass}"/>
-			<origin xyz="0 0 0" rpy="0 0 0"/>
-			<inertia
-				ixx="${(1/12) * mass * (3 * radius**2 + length**2)}"
-				ixy="0"
-				ixz="0"
-				iyy="${(1/12) * mass * (3 * radius**2 + length**2)}"
-				iyz="0"
-				izz="${(1/2) * mass * radius**2}"
-				/>
-		</inertial>
-	</xacro:macro>
+	<!-- Macro for creating arms - The following applies to all arm macros:
+				reflect_lr  : left(-1) right(1)
+				prefix      : used to name the link as left or right
+				parent_name : the name of the arm piece's parent -->
 
-	<!-- Macro for creating a sphere inertial element -->
-	<xacro:macro name="create_sphere_inertial" params="mass radius">
-		<inertial>
-			<mass value="${mass}"/>
-			<inertia
-				ixx="${(2/5) * mass * radius**2}"
-				ixy="0"
-				ixz="0"
-				iyy="${(2/5) * mass * radius**2}"
-				iyz="0"
-				izz="${(2/5) * mass * radius**2}"
-			/>
-		</inertial>
-	</xacro:macro>
-
-	<!-- Macro for creating wheels
-					reflect_lr  : left (-1) or right (1) wheel
-					reflect_fb  : back (-1) or front (1) wheel
-					wheel_id    : give the wheel a unique identifier
-					parent_name : the name of the wheel's parent
+	<!--
+	Arm 1 Macro
 	-->
-	<xacro:macro name="create_wheel" params="reflect_lr wheel_id parent_name">
+	<xacro:macro name="create_arm1" params="reflect_lr prefix parent_name">
 
-		<!-- The name of the current wheel -->
-		<xacro:property name="wheel_name" value="${wheel_id}_wheel"/>
+		<!-- Name of arm1 left/right piece -->
+		<xacro:property name="arm1_link" value="${prefix}_arm1_link"/>
 
-		<!-- The wheel's rigid body -->
-		<link name="${wheel_name}">
+		<!-- Arm1 piece's rigid body -->
+		<link name="${arm1_link}"/>
 
-			<!-- Create the wheel visual -->
+			<!-- Create the arm visual -->
 			<visual>
-				<mesh filename="package://tr1_description/meshes/wheel.dae" scale="0.1 0.1 0.1"/>
+				<geometry>
+		      <mesh filename="package://tr1_description/meshes/dae/arm1.dae" scale="0.001 0.001 0.001"/>
+				</geometry>
+				<origin rpy="${pi/2} 0 0" />
 			</visual>
 
-			<!-- The wheel's collision shape -->
+			<!-- The arm piece's collision shape -->
 			<collision>
-				<xacro:create_sphere_geometry radius="${wheel_radius}"/>
+				<geometry>
+		      <mesh filename="package://tr1_description/meshes/dae/arm1.dae" scale="0.001 0.001 0.001"/>
+				</geometry>
+				<origin rpy="${pi/2} 0 0" />
 			</collision>
 
-			<!-- Create the wheel's inertial matrix -->
-			<xacro:create_cylinder_inertial mass="${wheel_mass}" radius="${wheel_radius}"/>
+			<!-- Create the arm piece's inertial matrix -->
+			<!-- Inertia values to be added later -->
 		</link>
 
-		<!-- Connect the wheel to its parent -->
-		<joint name="${wheel_name}_joint" type="continuous">
-			<parent link="${parent_name}" />
-			<child link="${wheel_name}" />
-			<origin xyz= "${base_radius
+		<!-- Connect the arm piece to its parent -->
+		<joint name="${parent_name}_to_${prefix}_arm1" type="fixed">
+			<parent link="${parent_name}"/>
+			<child link="${arm1_link}"/>
+			<origin rpy="0 0 0.261799" xyz="${reflect_lr * 0.184864} 0.034420 0.20575"/>
+		</joint>
+
+	<!--
+	Arm3 Macro
+	-->
+	<xacro:macro name="create_arm3" params="reflect_lr prefix parent_name">
+
+		<!-- Name of arm3 left/right piece -->
+		<xacro:property name="arm3_link" value="${prefix}_arm3_link"/>
+
+		<!-- Arm3 piece's rigid body -->
+		<link name="${arm3_link}"/>
+
+			<!-- Create the arm visual -->
+			<visual>
+				<geometry>
+		      <mesh filename="package://tr1_description/meshes/dae/arm3.dae" scale="0.001 0.001 0.001"/>
+				</geometry>
+				<origin rpy="${pi/2} 0 0" />
+			</visual>
+
+			<!-- The arm piece's collision shape -->
+			<collision>
+				<geometry>
+		      <mesh filename="package://tr1_description/meshes/dae/arm3.dae" scale="0.001 0.001 0.001"/>
+				</geometry>
+				<origin rpy="${pi/2} 0 0" />
+			</collision>
+
+			<!-- Create the arm piece's inertial matrix -->
+			<!-- Inertia values to be added later -->
+		</link>
+
+		<!-- Connect the arm piece to its parent -->
+		<joint name="${parent_name}_to_${prefix}_arm3" type="revolute">
+			<parent link="${parent_name}"/>
+			<child link="${arm3_link}"/>
+			<origin rpy="0 0 0" xyz="${reflect_lr * 0.139238} 0 0"/>
+			<axis xyz="0 1 0"/>
+			<limit effort="1.0" lower="${reflect_lr * -pi/2}" upper="${reflect_lr * pi/2}" velocity="0.5"/>
+		</joint>
+
+<!--
+	Arm4 Macro
+	-->
+	<xacro:macro name="create_arm4" params="reflect_lr prefix parent_name">
+
+		<!-- Name of arm4 left/right piece -->
+		<xacro:property name="arm4_link" value="${prefix}_arm4_link"/>
+
+		<!-- Arm4 piece's rigid body -->
+		<link name="${arm4_link}"/>
+
+			<!-- Create the arm visual -->
+			<visual>
+				<geometry>
+		      <mesh filename="package://tr1_description/meshes/dae/arm4.dae" scale="0.001 0.001 0.001"/>
+				</geometry>
+				<origin rpy="${pi/2} 0 0" />
+			</visual>
+
+			<!-- The arm piece's collision shape -->
+			<collision>
+				<geometry>
+		      <mesh filename="package://tr1_description/meshes/dae/arm4.dae" scale="0.001 0.001 0.001"/>
+				</geometry>
+				<origin rpy="${pi/2} 0 0" />
+			</collision>
+
+			<!-- Create the arm piece's inertial matrix -->
+			<!-- Inertia values to be added later -->
+		</link>
+
+		<!-- Connect the arm piece to its parent -->
+		<joint name="${parent_name}_to_${prefix}_arm4" type="revolute">
+			<parent link="${parent_name}"/>
+			<child link="${arm4_link}"/>
+			<origin rpy="0 0 0" xyz="${reflect_lr * 0.238827} 0 0"/>
+			<axis xyz="0 1 0"/>
+			<limit effort="1.0" lower="${reflect_lr * -pi}" upper="${reflect_lr * pi}" velocity="0.5"/>
+		</joint>
+
+<!--
+	Arm5 Macro
+	-->
+	<xacro:macro name="create_arm5" params="reflect_lr prefix parent_name">
+
+		<!-- Name of arm5 left/right piece -->
+		<xacro:property name="arm5_link" value="${prefix}_arm5_link"/>
+
+		<!-- Arm5 piece's rigid body -->
+		<link name="${arm5_link}"/>
+
+			<!-- Create the arm visual -->
+			<visual>
+				<geometry>
+		      <mesh filename="package://tr1_description/meshes/dae/arm5.dae" scale="0.001 0.001 0.001"/>
+				</geometry>
+				<origin rpy="${-pi/2} ${pi} 0" />
+			</visual>
+
+			<!-- The arm piece's collision shape -->
+			<collision>
+				<geometry>
+		      <mesh filename="package://tr1_description/meshes/dae/arm5.dae" scale="0.001 0.001 0.001"/>
+				</geometry>
+				<origin rpy="${-pi/2} ${pi} 0" />
+			</collision>
+
+			<!-- Create the arm piece's inertial matrix -->
+			<!-- Inertia values to be added later -->
+		</link>
+
+		<!-- Connect the arm piece to its parent -->
+		<joint name="${parent_name}_to_${prefix}_arm5" type="revolute">
+			<parent link="${parent_name}"/>
+			<child link="${arm5_link}"/>
+			<origin rpy="0 0 0" xyz="${reflect_lr * 0.145} 0 0"/>
+			<axis xyz="0 1 0"/>
+			<limit effort="1.0" lower="${reflect_lr * -1.75}" upper="${reflect_lr * 1.75}" velocity="0.5"/>
+		</joint>
+
+<!--
+	Arm6 Macro
+	-->
+	<xacro:macro name="create_arm6" params="reflect_lr prefix parent_name">
+
+		<!-- Name of arm6 left/right piece -->
+		<xacro:property name="arm6_link" value="${prefix}_arm6_link"/>
+
+		<!-- Arm6 piece's rigid body -->
+		<link name="${arm6_link}"/>
+
+			<!-- Create the arm visual -->
+			<visual>
+				<geometry>
+		      <mesh filename="package://tr1_description/meshes/dae/arm6.dae" scale="0.001 0.001 0.001"/>
+				</geometry>
+				<origin rpy="${-pi/2} 0 0" />
+			</visual>
+
+			<!-- The arm piece's collision shape -->
+			<collision>
+				<geometry>
+		      <mesh filename="package://tr1_description/meshes/dae/arm6.dae" scale="0.001 0.001 0.001"/>
+				</geometry>
+				<origin rpy="${-pi/2} 0 0" />
+			</collision>
+
+			<!-- Create the arm piece's inertial matrix -->
+			<!-- Inertia values to be added later -->
+		</link>
+
+		<!-- Connect the arm piece to its parent -->
+		<joint name="${parent_name}_to_${prefix}_arm6" type="revolute">
+			<parent link="${parent_name}"/>
+			<child link="${arm6_link}"/>
+			<origin rpy="0 0 0" xyz="${reflect_lr * 0.230643} 0 0"/>
+			<axis xyz="0 1 0"/>
+			<limit effort="1.0" lower="${reflect_lr * -pi}" upper="${reflect_lr * pi}" velocity="0.5"/>
+		</joint>
+
+<!--
+	Arm7 Macro
+	-->
+	<xacro:macro name="create_arm7" params="reflect_lr prefix parent_name">
+
+		<!-- Name of arm7 left/right piece -->
+		<xacro:property name="arm7_link" value="${prefix}_arm7_link"/>
+
+		<!-- Arm7 piece's rigid body -->
+		<link name="${arm7_link}"/>
+
+			<!-- Create the arm visual -->
+			<visual>
+				<geometry>
+		      <mesh filename="package://tr1_description/meshes/dae/arm7.dae" scale="0.001 0.001 0.001"/>
+				</geometry>
+				<origin rpy="0 0 0" />
+			</visual>
+
+			<!-- The arm piece's collision shape -->
+			<collision>
+				<geometry>
+		      <mesh filename="package://tr1_description/meshes/dae/arm7.dae" scale="0.001 0.001 0.001"/>
+				</geometry>
+				<origin rpy="0 0 0" />
+			</collision>
+
+			<!-- Create the arm piece's inertial matrix -->
+			<!-- Inertia values to be added later -->
+		</link>
+
+		<!-- Connect the arm piece to its parent -->
+		<joint name="${parent_name}_to_${prefix}_arm7" type="fixed">
+			<parent link="${parent_name}"/>
+			<child link="${arm7_link}"/>
+			<origin rpy="0 0 0" xyz="${reflect_lr * 0.165} 0 0"/>
+			<axis xyz="0 1 0"/>
+			<limit effort="1.0" lower="${reflect_lr * -1.75}" upper="${reflect_lr * 1.75}" velocity="0.5"/>
+		</joint>
+
+<!--
+	Arm8 Macro
+	-->
+	<xacro:macro name="create_arm8" params="reflect_lr prefix parent_name">
+
+		<!-- Name of arm8 left/right piece -->
+		<xacro:property name="arm8_link" value="${prefix}_arm8_link"/>
+
+		<!-- Arm8 piece's rigid body -->
+		<link name="${arm8_link}"/>
+
+			<!-- Create the arm visual -->
+			<visual>
+				<geometry>
+		      <mesh filename="package://tr1_description/meshes/dae/arm8.dae" scale="0.001 0.001 0.001"/>
+				</geometry>
+				<origin rpy="${pi} 0 0" />
+			</visual>
+
+			<!-- The arm piece's collision shape -->
+			<collision>
+				<geometry>
+		      <mesh filename="package://tr1_description/meshes/dae/arm8.dae" scale="0.001 0.001 0.001"/>
+				</geometry>
+				<origin rpy="${pi} 0 0" />
+			</collision>
+
+			<!-- Create the arm piece's inertial matrix -->
+			<!-- Inertia values to be added later -->
+		</link>
+
+		<!-- Connect the arm piece to its parent -->
+		<joint name="${parent_name}_to_${prefix}_arm8" type="revolute">
+			<parent link="${parent_name}"/>
+			<child link="${arm8_link}"/>
+			<origin rpy="0 0 0" xyz="0 0.045311 0"/>
+			<axis xyz="1 0 0"/>
+			<limit effort="1.0" lower="${reflect_lr * -2}" upper="${reflect_lr * 2}" velocity="0.5"/>
+		</joint>
+
+<!--
+	Gripper1 Macro
+	-->
+	<xacro:macro name="create_gripper1" params="reflect_lr prefix parent_name">
+
+		<!-- Name of gripper1 left/right piece -->
+		<xacro:property name="gripper1_link" value="${prefix}_gripper1_link"/>
+
+		<!-- Gripper1 piece's rigid body -->
+		<link name="${gripper1_link}"/>
+
+			<!-- Create the gripper visual -->
+			<visual>
+				<geometry>
+					<mesh filename="package://tr1_description/meshes/dae/gripper1.dae" scale="0.001 0.001 0.001"/>
+				</geometry>
+			</visual>
+
+			<!-- Create the gripper piece's collision shape -->
+			<collision>
+				<geometry>
+					<mesh filename="package://tr1_description/meshes/dae/gripper1.dae" scale="0.001 0.001 0.001"/>
+				</geometry>
+			</collision>
+
+			<!-- Create the gripper piece's inertial matrix -->
+			<!-- Inertia values to be added later -->
+		</link>
+
+		<!-- Connect the gripper piece to its parent -->
+		<joint name="${parent_name}_to_${prefix}_gripper1" type="fixed">
+		<parent link="${parent_name}"/>
+		<child link="${gripper1_link}"/>
+		<origin xyz="${reflect_lr * 0.04619} 0 0"/>
+	</joint>
+
+<!--
+	Gripper3 Macro
+	-->
+	<xacro:macro name="create_gripper3" params="reflect_lr prefix parent_name">
+
+		<!-- Name of gripper3 left/right piece -->
+		<xacro:property name="gripper3_link" value="${prefix}_gripper3_link"/>
+
+		<!-- Gripper3 piece's rigid body -->
+		<link name="${gripper3_link}"/>
+
+			<!-- Create the gripper visual -->
+			<visual>
+				<geometry>
+					<mesh filename="package://tr1_description/meshes/dae/gripper3.dae" scale="0.001 0.001 0.001"/>
+				</geometry>
+			</visual>
+
+			<!-- Create the gripper piece's collision shape -->
+			<collision>
+				<geometry>
+					<mesh filename="package://tr1_description/meshes/dae/gripper3.dae" scale="0.001 0.001 0.001"/>
+				</geometry>
+			</collision>
+
+			<!-- Create the gripper piece's inertial matrix -->
+			<!-- Inertia values to be added later -->
+		</link>
+
+		<!-- Connect the gripper piece to its parent -->
+		<joint name="${parent_name}_to_${prefix}_gripper3" type="revolute">
+		<parent link="${parent_name}"/>
+		<child link="${gripper3_link}"/>
+		<mimic joint="gripper" multiplier="-1" offset="0"/>
+		<origin rpy="0 0 ${pi/2}" xyz="${reflect_lr * 0.024} 0.014 0"/>
+		<axis xyz="0 0 1"/>
+		<limit effort="1.0" lower="${-pi}" upper="${pi}" velocity="0.5"/>
+	</joint>
+
+<!--
+	Gripper4l Macro
+	-->
+	<xacro:macro name="create_gripper4l" params="reflect_lr prefix parent_name">
+
+		<!-- Name of gripper4l left/right piece -->
+		<xacro:property name="gripper4l_link" value="${prefix}_gripper4l_link"/>
+
+		<!-- Gripper4l piece's rigid body -->
+		<link name="${gripper4l_link}"/>
+
+			<!-- Create the gripper visual -->
+			<visual>
+				<geometry>
+					<mesh filename="package://tr1_description/meshes/dae/gripper4l.dae" scale="0.001 0.001 0.001"/>
+				</geometry>
+			</visual>
+
+			<!-- Create the gripper piece's collision shape -->
+			<collision>
+				<geometry>
+					<mesh filename="package://tr1_description/meshes/dae/gripper4l.dae" scale="0.001 0.001 0.001"/>
+				</geometry>
+			</collision>
+
+			<!-- Create the gripper piece's inertial matrix -->
+			<!-- Inertia values to be added later -->
+		</link>
+
+		<!-- Connect the gripper piece to its parent -->
+		<joint name="${parent_name}_to_${prefix}_gripper4l" type="revolute">
+		<parent link="${parent_name}"/>
+		<child link="${gripper4l_link}"/>
+		<mimic joint="gripper" multiplier="-1" offset="0"/>
+		<origin rpy="0 0 ${-pi/2}" xyz="${reflect_lr * 0.044} 0.007 0"/>
+		<axis xyz="0 0 1"/>
+		<limit effort="1.0" lower="${reflect_lr * -pi}" upper="${reflect_lr * pi}" velocity="0.5"/>
+	</joint>
+
+<!--
+	Gripper4r Macro
+	-->
+	<xacro:macro name="create_gripper4r" params="reflect_lr prefix parent_name">
+
+		<!-- Name of gripper4r left/right piece -->
+		<xacro:property name="gripper4r_link" value="${prefix}_gripper4r_link"/>
+
+		<!-- Gripper4r piece's rigid body -->
+		<link name="${gripper4r_link}"/>
+
+			<!-- Create the gripper visual -->
+			<visual>
+				<geometry>
+					<mesh filename="package://tr1_description/meshes/dae/gripper4r.dae" scale="0.001 0.001 0.001"/>
+				</geometry>
+			</visual>
+
+			<!-- Create the gripper piece's collision shape -->
+			<collision>
+				<geometry>
+					<mesh filename="package://tr1_description/meshes/dae/gripper4r.dae" scale="0.001 0.001 0.001"/>
+				</geometry>
+			</collision>
+
+			<!-- Create the gripper piece's inertial matrix -->
+			<!-- Inertia values to be added later -->
+		</link>
+
+		<!-- Connect the gripper piece to its parent -->
+		<joint name="${parent_name}_to_${prefix}_gripper4r" type="revolute">
+		<parent link="${parent_name}"/>
+		<child link="${gripper4r_link}"/>
+		<mimic joint="gripper" multiplier="-1" offset="0"/>
+		<origin rpy="0 0 ${pi/2}" xyz="${reflect_lr * 0.044} -0.007 0"/>
+		<axis xyz="0 0 1"/>
+		<limit effort="1.0" lower="${reflect_lr * -pi}" upper="${reflect_lr * pi}" velocity="0.5"/>
+	</joint>
+
+<!--
+	Gripper5 Macro
+	-->
+	<xacro:macro name="create_gripper5" params="reflect_lr prefix parent_name">
+
+		<!-- Name of gripper5 left/right piece -->
+		<xacro:property name="gripper5_link" value="${prefix}_gripper5_link"/>
+
+		<!-- Gripper5 piece's rigid body -->
+		<link name="${gripper5_link}"/>
+
+			<!-- Create the gripper visual -->
+			<visual>
+				<geometry>
+					<mesh filename="package://tr1_description/meshes/dae/gripper5.dae" scale="0.001 0.001 0.001"/>
+				</geometry>
+			</visual>
+
+			<!-- Create the gripper piece's collision shape -->
+			<collision>
+				<geometry>
+					<mesh filename="package://tr1_description/meshes/dae/gripper5.dae" scale="0.001 0.001 0.001"/>
+				</geometry>
+			</collision>
+
+			<!-- Create the gripper piece's inertial matrix -->
+			<!-- Inertia values to be added later -->
+		</link>
+
+		<!-- Connect the gripper piece to its parent -->
+		<joint name="${parent_name}_to_${prefix}_gripper5" type="revolute">
+		<parent link="${parent_name}"/>
+		<child link="${gripper5_link}"/>
+		<mimic joint="gripper" multiplier="-1" offset="0"/>
+		<origin rpy="${reflect_lr * 0.04} 0 0" xyz="${reflect_lr * 0.044} -0.007 0"/>
+		<axis xyz="0 0 1"/>
+		<limit effort="1.0" lower="${reflect_lr * -pi}" upper="${reflect_lr * pi}" velocity="0.5"/>
+	</joint>
+
+<!--
+	Gripper6 Macro
+	-->
+	<xacro:macro name="create_gripper6" params="reflect_lr prefix parent_name">
+
+		<!-- Name of gripper6 left/right piece -->
+		<xacro:property name="gripper6_link" value="${prefix}_gripper6_link"/>
+
+		<!-- Gripper6 piece's rigid body -->
+		<link name="${gripper6_link}"/>
+
+			<!-- Create the gripper visual -->
+			<visual>
+				<geometry>
+					<mesh filename="package://tr1_description/meshes/dae/gripper6.dae" scale="0.001 0.001 0.001"/>
+				</geometry>
+				<origin rpy="${reflect_lr * pi} 0 ${pi/2}"/>
+			</visual>
+
+			<!-- Create the gripper piece's collision shape -->
+			<collision>
+				<geometry>
+					<mesh filename="package://tr1_description/meshes/dae/gripper6.dae" scale="0.001 0.001 0.001"/>
+				</geometry>
+				<origin rpy="${reflect_lr * pi} 0 ${pi/2}"/>
+			</collision>
+
+			<!-- Create the gripper piece's inertial matrix -->
+			<!-- Inertia values to be added later -->
+		</link>
+
+		<!-- Connect the gripper piece to its parent -->
+		<joint name="${parent_name}_to_${prefix}_gripper6" type="revolute">
+		<parent link="${parent_name}"/>
+		<child link="${gripper6_link}"/>
+		<mimic joint="gripper" multiplier="-1" offset="0"/>
+		<origin rpy="${reflect_lr * 0.04} 0 0" xyz="${reflect_lr * 0.044} -0.007 0"/>
+		<axis xyz="0 0 1"/>
+		<limit effort="1.0" lower="${reflect_lr * -pi}" upper="${reflect_lr * pi}" velocity="0.5"/>
+	</joint>

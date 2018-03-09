@@ -1,0 +1,19 @@
+<launch>
+	<!-- values passed by command line input -->
+	<arg name="model" default="$(find tr1_description)/urdf/tr1.main.xacro"/>
+	<arg name="gui" default="true" />
+	<arg name="rvizconfig" default="$(find tr1_description)/rviz/urdf.rviz"/>
+
+	<!-- set these parameters on Parameter Server -->
+	<param name="robot_description" command="$(find xacro)/xacro --inorder $(arg model)" />
+	<param name="use_gui" value="$(arg gui)"/>
+
+	<!-- Start 3 nodes: joint_state_publisher, robot_state_publisher and rviz -->
+	<node name="joint_state_publisher" pkg="joint_state_publisher" type="joint_state_publisher">
+    <param name="/use_gui" value="true"/> 
+    <rosparam param="/source_list">[/move_group/fake_controller_joint_states]</rosparam>
+  </node>
+	<node name="robot_state_publisher" pkg="robot_state_publisher" type="state_publisher" />
+	<node name="rviz" pkg="rviz" type="rviz" args="-d $(find tr1_description)/urdf.rviz" required="true" />
+	<!-- (required = "true") if rviz dies, entire roslaunch will be killed -->
+</launch>

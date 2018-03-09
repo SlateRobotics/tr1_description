@@ -1,6 +1,6 @@
 <launch>
 	<!-- values passed by command line input -->
-	<arg name="model" />
+	<arg name="model" default= "$(find tr1_description)/urdf/tr1.urdf" />
 	<arg name="gut" default="False" />
 
 	<!-- set these parameters on Parameter Server -->

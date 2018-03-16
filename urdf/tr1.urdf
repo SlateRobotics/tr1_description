@@ -256,7 +256,7 @@
 		<origin rpy="0 0 0.261799" xyz="0.184864 0.034420 0.20575"/>
 	</joint>
 
-	<joint name="right_arm1_to_right_arm2" type="revolute">
+	<joint name="JointRightShoulderPan" type="revolute">
 		<parent link="right_arm1_link"/>
 		<child link="right_arm2_link"/>
 		<origin xyz="0 0 -0.007"/>
@@ -264,7 +264,7 @@
 		<limit effort="1.0" lower="-1" upper="1.5708" velocity="0.5"/>
 	</joint>
 
-	<joint name="right_arm2_to_right_arm3" type="revolute">
+	<joint name="JointRightShoulderTilt" type="revolute">
 		<parent link="right_arm2_link"/>
 		<child link="right_arm3_link"/>
 		<origin xyz="0.139238 0 0"/>
@@ -272,7 +272,7 @@
 		<limit effort="1.0" lower="-1.5708" upper="1.5708" velocity="0.5"/>
 	</joint>
 
-	<joint name="right_arm3_to_right_arm4" type="revolute">
+	<joint name="JointRightUpperArmRoll" type="revolute">
 		<parent link="right_arm3_link"/>
 		<child link="right_arm4_link"/>
 		<origin xyz="0.238827 0 0"/>
@@ -280,7 +280,7 @@
 		<limit effort="1.0" lower="-3.1415" upper="3.1415" velocity="0.5"/>
 	</joint>
 
-	<joint name="right_arm4_to_right_arm5" type="revolute">
+	<joint name="JointRightElbowFlex" type="revolute">
 		<parent link="right_arm4_link"/>
 		<child link="right_arm5_link"/>
 		<origin xyz="0.145 0 0"/>
@@ -288,7 +288,7 @@
 		<limit effort="1.0" lower="-1.75" upper="1.75" velocity="0.5"/>
 	</joint>
 
-	<joint name="right_arm5_to_right_arm6" type="revolute">
+	<joint name="JointRightForearmRoll" type="revolute">
 		<parent link="right_arm5_link"/>
 		<child link="right_arm6_link"/>
 		<origin xyz="0.230643 0 0"/>
@@ -296,7 +296,7 @@
 		<limit effort="1.0" lower="-3.1415" upper="3.1415" velocity="0.5"/>
 	</joint>
 
-	<joint name="right_arm6_to_right_arm7" type="revolute">
+	<joint name="JointRightWristFlex" type="revolute">
 		<parent link="right_arm6_link"/>
 		<child link="right_arm7_link"/>
 		<origin xyz="0.165 0 0"/>
@@ -304,7 +304,7 @@
 		<limit effort="1.0" lower="-1.75" upper="1.75" velocity="0.5"/>
 	</joint>
 
-	<joint name="right_arm7_to_right_arm8" type="revolute">
+	<joint name="JointRightWristRoll" type="revolute">
 		<parent link="right_arm7_link"/>
 		<child link="right_arm8_link"/>
 		<origin xyz="0.045311 0 0"/>
@@ -318,7 +318,7 @@
 		<origin xyz="0.04619 0 0"/>
 	</joint>
 
-	<joint name="right_gripper" type="revolute">
+	<joint name="JointRightGripper" type="revolute">
 		<parent link="right_gripper1_link"/>
 		<child link="right_gripper2_link"/>
 		<origin rpy="0 0 -1.5708" xyz="0.024 -0.014 0"/>
@@ -329,7 +329,7 @@
 	<joint name="right_gripper1_to_right_gripper3" type="revolute">
 		<parent link="right_gripper1_link"/>
 		<child link="right_gripper3_link"/>
-		<mimic joint="right_gripper" multiplier="-1" offset="0"/>
+		<mimic joint="JointRightGripper" multiplier="-1" offset="0"/>
 		<origin rpy="0 0 1.5708" xyz="0.024 0.014 0"/>
     <axis xyz="0 0 1"/>
 		<limit effort="1.0" lower="-3.1415" upper="3.1415" velocity="0.5"/>
@@ -339,7 +339,7 @@
 		<parent link="right_gripper1_link"/>
 		<child link="right_gripper4l_link"/>
 		<origin rpy="0 0 -1.5708" xyz="0.044 0.007 0"/>
-		<mimic joint="right_gripper" multiplier="-1" offset="0"/>
+		<mimic joint="JointRightGripper" multiplier="-1" offset="0"/>
     <axis xyz="0 0 1"/>
 		<limit effort="1.0" lower="-3.1415" upper="3.1415" velocity="0.5"/>
 	</joint>
@@ -348,7 +348,7 @@
 		<parent link="right_gripper1_link"/>
 		<child link="right_gripper4r_link"/>
 		<origin rpy="0 0 1.5708" xyz="0.044 -0.007 0"/>
-		<mimic joint="right_gripper" multiplier="1" offset="0"/>
+		<mimic joint="JointRightGripper" multiplier="1" offset="0"/>
     <axis xyz="0 0 1"/>
 		<limit effort="1.0" lower="-3.1415" upper="3.1415" velocity="0.5"/>
 	</joint>
@@ -357,7 +357,7 @@
 		<parent link="right_gripper2_link"/>
 		<child link="right_gripper6_link"/>
 		<origin xyz="0.040 0 0"/>
-		<mimic joint="right_gripper" multiplier="-1" offset="0"/>
+		<mimic joint="JointRightGripper" multiplier="-1" offset="0"/>
     <axis xyz="0 0 1"/>
 		<limit effort="1.0" lower="-3.1415" upper="3.1415" velocity="0.5"/>
 	</joint>
@@ -366,7 +366,7 @@
 		<parent link="right_gripper3_link"/>
 		<child link="right_gripper5_link"/>
 		<origin xyz="0.040 0 0"/>
-		<mimic joint="right_gripper" multiplier="1" offset="0"/>
+		<mimic joint="JointRightGripper" multiplier="1" offset="0"/>
     <axis xyz="0 0 1"/>
 		<limit effort="1.0" lower="-3.1415" upper="3.1415" velocity="0.5"/>
 	</joint>

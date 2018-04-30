@@ -214,7 +214,7 @@
 		</visual>
 	</link>
 
-	<joint name="base_to_body" type="prismatic">
+	<joint name="JointTorsoExtension" type="prismatic">
 		<parent link="base_link"/>
 		<child link="body_link"/>
     <axis xyz="0 0 1"/>
@@ -222,28 +222,28 @@
 		<origin xyz="0 0 0.7955"/>
 	</joint>
 
-	<joint name="base_to_wheel1" type="continuous">
+	<joint name="JointBaseWheelFL" type="continuous">
 		<parent link="base_link"/>
 		<child link="wheel1_link"/>
     <axis xyz="0 1 0"/>
 		<origin rpy="0 0 0.785398" xyz="-0.293310 0.417810 -0.0725"/>
 	</joint>
 
-	<joint name="base_to_wheel2" type="continuous">
+	<joint name="JointBaseWheelFR" type="continuous">
 		<parent link="base_link"/>
 		<child link="wheel2_link"/>
     <axis xyz="0 1 0"/>
 		<origin rpy="0 0 -0.785398" xyz="0.293310 0.417810 -0.0725"/>
 	</joint>
 
-	<joint name="base_to_wheel3" type="continuous">
+	<joint name="JointBaseWheelBL" type="continuous">
 		<parent link="base_link"/>
 		<child link="wheel3_link"/>
     <axis xyz="0 1 0"/>
 		<origin rpy="0 0 -2.35619449019" xyz="0.293310 -0.168810 -0.0725"/>
 	</joint>
 
-	<joint name="base_to_wheel4" type="continuous">
+	<joint name="JointBaseWheelBR" type="continuous">
 		<parent link="base_link"/>
 		<child link="wheel4_link"/>
     <axis xyz="0 1 0"/>

@@ -433,7 +433,7 @@
 	<link name="head_link">
 		<collision>
 			<geometry>
-        <mesh filename="package://tr1_description/meshes/dae/neck.dae" scale="0.001 0.001 0.001"/>
+        <mesh filename="package://tr1_description/meshes/dae/head.dae" scale="0.1 0.1 0.1"/>
 			</geometry>
 			<origin rpy="1.5708 0 0"/>
 		</collision>
@@ -443,7 +443,7 @@
 		</inertial>
 		<visual>
 			<geometry>
-        <mesh filename="package://tr1_description/meshes/dae/head.dae" scale="0.001 0.001 0.001"/>
+        <mesh filename="package://tr1_description/meshes/dae/head.dae" scale="0.1 0.1 0.1"/>
 			</geometry>
 			<origin rpy="0 -1.5708 -1.5708"/>
 		</visual>

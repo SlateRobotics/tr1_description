@@ -1,6 +1,16 @@
 <robot name="tr1">
 
 	<link name="base_link">
+		<collision>
+			<geometry>
+        <mesh filename="package://tr1_description/meshes/dae/base.dae" scale="0.001 0.001 0.001"/>
+			</geometry>
+			<origin rpy="0 0 3.141592" />
+		</collision>
+		<inertial>
+			<mass value="1.0"/>
+			<inertia ixx="0.015" iyy="0.0375" izz="0.0375" ixy="0" ixz="0" iyz="0" />
+		</inertial>
 		<visual>
 			<geometry>
         <mesh filename="package://tr1_description/meshes/dae/base.dae" scale="0.001 0.001 0.001"/>
@@ -13,6 +23,16 @@
 	</link>
 
 	<link name="wheel1_link">
+		<collision>
+			<geometry>
+        <mesh filename="package://tr1_description/meshes/dae/wheel.dae" scale="0.001 0.001 0.001"/>
+			</geometry>
+			<origin rpy="1.5708 0 0" />
+		</collision>
+		<inertial>
+			<mass value="1.0"/>
+			<inertia ixx="0.015" iyy="0.0375" izz="0.0375" ixy="0" ixz="0" iyz="0" />
+		</inertial>
 		<visual>
 			<geometry>
         <mesh filename="package://tr1_description/meshes/dae/wheel.dae" scale="0.001 0.001 0.001"/>
@@ -22,6 +42,16 @@
 	</link>
 
 	<link name="wheel2_link">
+		<collision>
+			<geometry>
+        <mesh filename="package://tr1_description/meshes/dae/wheel.dae" scale="0.001 0.001 0.001"/>
+			</geometry>
+			<origin rpy="1.5708 0 0" />
+		</collision>
+		<inertial>
+			<mass value="1.0"/>
+			<inertia ixx="0.015" iyy="0.0375" izz="0.0375" ixy="0" ixz="0" iyz="0" />
+		</inertial>
 		<visual>
 			<geometry>
         <mesh filename="package://tr1_description/meshes/dae/wheel.dae" scale="0.001 0.001 0.001"/>
@@ -31,6 +61,16 @@
 	</link>
 
 	<link name="wheel3_link">
+		<collision>
+			<geometry>
+        <mesh filename="package://tr1_description/meshes/dae/wheel.dae" scale="0.001 0.001 0.001"/>
+			</geometry>
+			<origin rpy="1.5708 0 0" />
+		</collision>
+		<inertial>
+			<mass value="1.0"/>
+			<inertia ixx="0.015" iyy="0.0375" izz="0.0375" ixy="0" ixz="0" iyz="0" />
+		</inertial>
 		<visual>
 			<geometry>
         <mesh filename="package://tr1_description/meshes/dae/wheel.dae" scale="0.001 0.001 0.001"/>
@@ -40,6 +80,16 @@
 	</link>
 
 	<link name="wheel4_link">
+		<collision>
+			<geometry>
+        <mesh filename="package://tr1_description/meshes/dae/wheel.dae" scale="0.001 0.001 0.001"/>
+			</geometry>
+			<origin rpy="1.5708 0 0" />
+		</collision>
+		<inertial>
+			<mass value="1.0"/>
+			<inertia ixx="0.015" iyy="0.0375" izz="0.0375" ixy="0" ixz="0" iyz="0" />
+		</inertial>
 		<visual>
 			<geometry>
         <mesh filename="package://tr1_description/meshes/dae/wheel.dae" scale="0.001 0.001 0.001"/>
@@ -49,6 +99,16 @@
 	</link>
 
 	<link name="body_link">
+		<collision>
+			<geometry>
+        <mesh filename="package://tr1_description/meshes/dae/body.dae" scale="0.001 0.001 0.001"/>
+			</geometry>
+			<origin rpy="0 0 3.141592"/>
+		</collision>
+		<inertial>
+			<mass value="1.0"/>
+			<inertia ixx="0.015" iyy="0.0375" izz="0.0375" ixy="0" ixz="0" iyz="0" />
+		</inertial>
 		<visual>
 			<geometry>
         <mesh filename="package://tr1_description/meshes/dae/body.dae" scale="0.001 0.001 0.001"/>
@@ -58,6 +118,16 @@
 	</link>
 
 	<link name="right_arm1_link">
+		<collision>
+			<geometry>
+        <mesh filename="package://tr1_description/meshes/dae/arm1.dae" scale="0.001 0.001 0.001"/>
+			</geometry>
+			<origin rpy="1.5708 0 0" />
+		</collision>
+		<inertial>
+			<mass value="1.0"/>
+			<inertia ixx="0.015" iyy="0.0375" izz="0.0375" ixy="0" ixz="0" iyz="0" />
+		</inertial>
 		<visual>
 			<geometry>
         <mesh filename="package://tr1_description/meshes/dae/arm1.dae" scale="0.001 0.001 0.001"/>
@@ -67,6 +137,16 @@
 	</link>
 
 	<link name="right_arm2_link">
+		<collision>
+			<geometry>
+        <mesh filename="package://tr1_description/meshes/dae/arm2.dae" scale="0.001 0.001 0.001"/>
+			</geometry>
+			<origin rpy="1.5708 0 0" />
+		</collision>
+		<inertial>
+			<mass value="1.0"/>
+			<inertia ixx="0.015" iyy="0.0375" izz="0.0375" ixy="0" ixz="0" iyz="0" />
+		</inertial>
 		<visual>
 			<geometry>
         <mesh filename="package://tr1_description/meshes/dae/arm2.dae" scale="0.001 0.001 0.001"/>
@@ -76,6 +156,16 @@
 	</link>
 
 	<link name="right_arm3_link">
+		<collision>
+			<geometry>
+        <mesh filename="package://tr1_description/meshes/dae/arm3.dae" scale="0.001 0.001 0.001"/>
+			</geometry>
+			<origin rpy="1.5708 0 0" />
+		</collision>
+		<inertial>
+			<mass value="1.0"/>
+			<inertia ixx="0.015" iyy="0.0375" izz="0.0375" ixy="0" ixz="0" iyz="0" />
+		</inertial>
 		<visual>
 			<geometry>
         <mesh filename="package://tr1_description/meshes/dae/arm3.dae" scale="0.001 0.001 0.001"/>
@@ -85,6 +175,16 @@
 	</link>
 
 	<link name="right_arm4_link">
+		<collision>
+			<geometry>
+        <mesh filename="package://tr1_description/meshes/dae/arm4.dae" scale="0.001 0.001 0.001"/>
+			</geometry>
+			<origin rpy="1.5708 0 0" />
+		</collision>
+		<inertial>
+			<mass value="1.0"/>
+			<inertia ixx="0.015" iyy="0.0375" izz="0.0375" ixy="0" ixz="0" iyz="0" />
+		</inertial>
 		<visual>
 			<geometry>
         <mesh filename="package://tr1_description/meshes/dae/arm4.dae" scale="0.001 0.001 0.001"/>
@@ -94,6 +194,16 @@
 	</link>
 
 	<link name="right_arm5_link">
+		<collision>
+			<geometry>
+        <mesh filename="package://tr1_description/meshes/dae/arm5.dae" scale="0.001 0.001 0.001"/>
+			</geometry>
+			<origin rpy="-1.5708 3.141592 0" />
+		</collision>
+		<inertial>
+			<mass value="1.0"/>
+			<inertia ixx="0.015" iyy="0.0375" izz="0.0375" ixy="0" ixz="0" iyz="0" />
+		</inertial>
 		<visual>
 			<geometry>
         <mesh filename="package://tr1_description/meshes/dae/arm5.dae" scale="0.001 0.001 0.001"/>
@@ -103,6 +213,16 @@
 	</link>
 
 	<link name="right_arm6_link">
+		<collision>
+			<geometry>
+        <mesh filename="package://tr1_description/meshes/dae/arm6.dae" scale="0.001 0.001 0.001"/>
+			</geometry>
+			<origin rpy="-1.5708 0 0" />
+		</collision>
+		<inertial>
+			<mass value="1.0"/>
+			<inertia ixx="0.015" iyy="0.0375" izz="0.0375" ixy="0" ixz="0" iyz="0" />
+		</inertial>
 		<visual>
 			<geometry>
         <mesh filename="package://tr1_description/meshes/dae/arm6.dae" scale="0.001 0.001 0.001"/>
@@ -112,6 +232,16 @@
 	</link>
 
 	<link name="right_arm7_link">
+		<collision>
+			<geometry>
+        <mesh filename="package://tr1_description/meshes/dae/arm7.dae" scale="0.001 0.001 0.001"/>
+			</geometry>
+			<origin rpy="0 0 0" />
+		</collision>
+		<inertial>
+			<mass value="1.0"/>
+			<inertia ixx="0.015" iyy="0.0375" izz="0.0375" ixy="0" ixz="0" iyz="0" />
+		</inertial>
 		<visual>
 			<geometry>
         <mesh filename="package://tr1_description/meshes/dae/arm7.dae" scale="0.001 0.001 0.001"/>
@@ -121,6 +251,16 @@
 	</link>
 
 	<link name="right_arm8_link">
+		<collision>
+			<geometry>
+        <mesh filename="package://tr1_description/meshes/dae/arm8.dae" scale="0.001 0.001 0.001"/>
+			</geometry>
+			<origin rpy="3.141592 0 0" />
+		</collision>
+		<inertial>
+			<mass value="1.0"/>
+			<inertia ixx="0.015" iyy="0.0375" izz="0.0375" ixy="0" ixz="0" iyz="0" />
+		</inertial>
 		<visual>
 			<geometry>
         <mesh filename="package://tr1_description/meshes/dae/arm8.dae" scale="0.001 0.001 0.001"/>
@@ -130,6 +270,16 @@
 	</link>
 
 	<link name="right_gripper1_link">
+		<collision>
+			<geometry>
+        <mesh filename="package://tr1_description/meshes/dae/gripper1.dae" scale="0.001 0.001 0.001"/>
+			</geometry>
+			<origin rpy="1.5708 0 0" />
+		</collision>
+		<inertial>
+			<mass value="1.0"/>
+			<inertia ixx="0.015" iyy="0.0375" izz="0.0375" ixy="0" ixz="0" iyz="0" />
+		</inertial>
 		<visual>
 			<geometry>
         <mesh filename="package://tr1_description/meshes/dae/gripper1.dae" scale="0.001 0.001 0.001"/>
@@ -139,6 +289,15 @@
 	</link>
 
 	<link name="right_gripper2_link">
+		<collision>
+			<geometry>
+        <mesh filename="package://tr1_description/meshes/dae/gripper2.dae" scale="0.001 0.001 0.001"/>
+			</geometry>
+		</collision>
+		<inertial>
+			<mass value="1.0"/>
+			<inertia ixx="0.015" iyy="0.0375" izz="0.0375" ixy="0" ixz="0" iyz="0" />
+		</inertial>
 		<visual>
 			<geometry>
         <mesh filename="package://tr1_description/meshes/dae/gripper2.dae" scale="0.001 0.001 0.001"/>
@@ -147,6 +306,15 @@
 	</link>
 
 	<link name="right_gripper3_link">
+		<collision>
+			<geometry>
+        <mesh filename="package://tr1_description/meshes/dae/gripper3.dae" scale="0.001 0.001 0.001"/>
+			</geometry>
+		</collision>
+		<inertial>
+			<mass value="1.0"/>
+			<inertia ixx="0.015" iyy="0.0375" izz="0.0375" ixy="0" ixz="0" iyz="0" />
+		</inertial>
 		<visual>
 			<geometry>
         <mesh filename="package://tr1_description/meshes/dae/gripper3.dae" scale="0.001 0.001 0.001"/>
@@ -155,6 +323,15 @@
 	</link>
 
 	<link name="right_gripper4l_link">
+		<collision>
+			<geometry>
+        <mesh filename="package://tr1_description/meshes/dae/gripper4.dae" scale="0.001 0.001 0.001"/>
+			</geometry>
+		</collision>
+		<inertial>
+			<mass value="1.0"/>
+			<inertia ixx="0.015" iyy="0.0375" izz="0.0375" ixy="0" ixz="0" iyz="0" />
+		</inertial>
 		<visual>
 			<geometry>
         <mesh filename="package://tr1_description/meshes/dae/gripper4.dae" scale="0.001 0.001 0.001"/>
@@ -163,6 +340,15 @@
 	</link>
 
 	<link name="right_gripper4r_link">
+		<collision>
+			<geometry>
+        <mesh filename="package://tr1_description/meshes/dae/gripper4.dae" scale="0.001 0.001 0.001"/>
+			</geometry>
+		</collision>
+		<inertial>
+			<mass value="1.0"/>
+			<inertia ixx="0.015" iyy="0.0375" izz="0.0375" ixy="0" ixz="0" iyz="0" />
+		</inertial>
 		<visual>
 			<geometry>
         <mesh filename="package://tr1_description/meshes/dae/gripper4.dae" scale="0.001 0.001 0.001"/>
@@ -171,6 +357,15 @@
 	</link>
 
 	<link name="right_gripper5_link">
+		<collision>
+			<geometry>
+        <mesh filename="package://tr1_description/meshes/dae/gripper5.dae" scale="0.001 0.001 0.001"/>
+			</geometry>
+		</collision>
+		<inertial>
+			<mass value="1.0"/>
+			<inertia ixx="0.015" iyy="0.0375" izz="0.0375" ixy="0" ixz="0" iyz="0" />
+		</inertial>
 		<visual>
 			<geometry>
         <mesh filename="package://tr1_description/meshes/dae/gripper5.dae" scale="0.001 0.001 0.001"/>
@@ -179,6 +374,16 @@
 	</link>
 
 	<link name="right_gripper6_link">
+		<collision>
+			<geometry>
+        <mesh filename="package://tr1_description/meshes/dae/gripper6.dae" scale="0.001 0.001 0.001"/>
+			</geometry>
+			<origin rpy="3.141592 0 1.5708" />
+		</collision>
+		<inertial>
+			<mass value="1.0"/>
+			<inertia ixx="0.015" iyy="0.0375" izz="0.0375" ixy="0" ixz="0" iyz="0" />
+		</inertial>
 		<visual>
 			<geometry>
         <mesh filename="package://tr1_description/meshes/dae/gripper6.dae" scale="0.001 0.001 0.001"/>
@@ -188,6 +393,16 @@
 	</link>
 
 	<link name="neck_base_link">
+		<collision>
+			<geometry>
+        <mesh filename="package://tr1_description/meshes/dae/neck_base.dae" scale="0.001 0.001 0.001"/>
+			</geometry>
+			<origin rpy="1.5708 0 0"/>
+		</collision>
+		<inertial>
+			<mass value="1.0"/>
+			<inertia ixx="0.015" iyy="0.0375" izz="0.0375" ixy="0" ixz="0" iyz="0" />
+		</inertial>
 		<visual>
 			<geometry>
         <mesh filename="package://tr1_description/meshes/dae/neck_base.dae" scale="0.001 0.001 0.001"/>
@@ -197,6 +412,16 @@
 	</link>
 
 	<link name="neck_link">
+		<collision>
+			<geometry>
+        <mesh filename="package://tr1_description/meshes/dae/neck.dae" scale="0.001 0.001 0.001"/>
+			</geometry>
+			<origin rpy="1.5708 0 0"/>
+		</collision>
+		<inertial>
+			<mass value="1.0"/>
+			<inertia ixx="0.015" iyy="0.0375" izz="0.0375" ixy="0" ixz="0" iyz="0" />
+		</inertial>
 		<visual>
 			<geometry>
         <mesh filename="package://tr1_description/meshes/dae/neck.dae" scale="0.001 0.001 0.001"/>
@@ -206,6 +431,16 @@
 	</link>
 
 	<link name="head_link">
+		<collision>
+			<geometry>
+        <mesh filename="package://tr1_description/meshes/dae/neck.dae" scale="0.001 0.001 0.001"/>
+			</geometry>
+			<origin rpy="1.5708 0 0"/>
+		</collision>
+		<inertial>
+			<mass value="1.0"/>
+			<inertia ixx="0.015" iyy="0.0375" izz="0.0375" ixy="0" ixz="0" iyz="0" />
+		</inertial>
 		<visual>
 			<geometry>
         <mesh filename="package://tr1_description/meshes/dae/head.dae" scale="0.001 0.001 0.001"/>
@@ -261,7 +496,7 @@
 		<child link="right_arm2_link"/>
 		<origin xyz="0 0 -0.007"/>
     <axis xyz="0 0 1"/>
-		<limit effort="1.0" lower="-1" upper="1.5708" velocity="0.5"/>
+		<limit effort="1.0" lower="-1" upper="1.5708" velocity="0.1"/>
 	</joint>
 
 	<joint name="JointRightShoulderTilt" type="revolute">
@@ -270,6 +505,7 @@
 		<origin xyz="0.139238 0 0"/>
     <axis xyz="0 1 0"/>
 		<limit effort="1.0" lower="-1.5708" upper="1.5708" velocity="0.5"/>
+		<saftey_controller k_velocity="100" />
 	</joint>
 
 	<joint name="JointRightUpperArmRoll" type="revolute">
@@ -372,6 +608,16 @@
 	</joint>
 
 	<link name="left_arm1_link">
+		<collision>
+			<geometry>
+        <mesh filename="package://tr1_description/meshes/dae/arm1.dae" scale="0.001 0.001 0.001"/>
+			</geometry>
+			<origin rpy="1.5708 0 0" />
+		</collision>
+		<inertial>
+			<mass value="1.0"/>
+			<inertia ixx="0.015" iyy="0.0375" izz="0.0375" ixy="0" ixz="0" iyz="0" />
+		</inertial>
 		<visual>
 			<geometry>
         <mesh filename="package://tr1_description/meshes/dae/arm1.dae" scale="0.001 0.001 0.001"/>
@@ -381,6 +627,16 @@
 	</link>
 
 	<link name="left_arm2_link">
+		<collision>
+			<geometry>
+        <mesh filename="package://tr1_description/meshes/dae/arm2.dae" scale="0.001 0.001 0.001"/>
+			</geometry>
+			<origin rpy="1.5708 0 0" />
+		</collision>
+		<inertial>
+			<mass value="1.0"/>
+			<inertia ixx="0.015" iyy="0.0375" izz="0.0375" ixy="0" ixz="0" iyz="0" />
+		</inertial>
 		<visual>
 			<geometry>
         <mesh filename="package://tr1_description/meshes/dae/arm2.dae" scale="0.001 0.001 0.001"/>
@@ -390,6 +646,16 @@
 	</link>
 
 	<link name="left_arm3_link">
+		<collision>
+			<geometry>
+        <mesh filename="package://tr1_description/meshes/dae/arm3.dae" scale="0.001 0.001 0.001"/>
+			</geometry>
+			<origin rpy="1.5708 0 0" />
+		</collision>
+		<inertial>
+			<mass value="1.0"/>
+			<inertia ixx="0.015" iyy="0.0375" izz="0.0375" ixy="0" ixz="0" iyz="0" />
+		</inertial>
 		<visual>
 			<geometry>
         <mesh filename="package://tr1_description/meshes/dae/arm3.dae" scale="0.001 0.001 0.001"/>
@@ -399,6 +665,16 @@
 	</link>
 
 	<link name="left_arm4_link">
+		<collision>
+			<geometry>
+        <mesh filename="package://tr1_description/meshes/dae/arm4.dae" scale="0.001 0.001 0.001"/>
+			</geometry>
+			<origin rpy="1.5708 0 0" />
+		</collision>
+		<inertial>
+			<mass value="1.0"/>
+			<inertia ixx="0.015" iyy="0.0375" izz="0.0375" ixy="0" ixz="0" iyz="0" />
+		</inertial>
 		<visual>
 			<geometry>
         <mesh filename="package://tr1_description/meshes/dae/arm4.dae" scale="0.001 0.001 0.001"/>
@@ -408,6 +684,16 @@
 	</link>
 
 	<link name="left_arm5_link">
+		<collision>
+			<geometry>
+        <mesh filename="package://tr1_description/meshes/dae/arm5.dae" scale="0.001 0.001 0.001"/>
+			</geometry>
+			<origin rpy="-1.5708 3.141592 0" />
+		</collision>
+		<inertial>
+			<mass value="1.0"/>
+			<inertia ixx="0.015" iyy="0.0375" izz="0.0375" ixy="0" ixz="0" iyz="0" />
+		</inertial>
 		<visual>
 			<geometry>
         <mesh filename="package://tr1_description/meshes/dae/arm5.dae" scale="0.001 0.001 0.001"/>
@@ -417,6 +703,16 @@
 	</link>
 
 	<link name="left_arm6_link">
+		<collision>
+			<geometry>
+        <mesh filename="package://tr1_description/meshes/dae/arm6.dae" scale="0.001 0.001 0.001"/>
+			</geometry>
+			<origin rpy="-1.5708 0 0" />
+		</collision>
+		<inertial>
+			<mass value="1.0"/>
+			<inertia ixx="0.015" iyy="0.0375" izz="0.0375" ixy="0" ixz="0" iyz="0" />
+		</inertial>
 		<visual>
 			<geometry>
         <mesh filename="package://tr1_description/meshes/dae/arm6.dae" scale="0.001 0.001 0.001"/>
@@ -426,6 +722,16 @@
 	</link>
 
 	<link name="left_arm7_link">
+		<collision>
+			<geometry>
+        <mesh filename="package://tr1_description/meshes/dae/arm7.dae" scale="0.001 0.001 0.001"/>
+			</geometry>
+			<origin rpy="0 0 0" />
+		</collision>
+		<inertial>
+			<mass value="1.0"/>
+			<inertia ixx="0.015" iyy="0.0375" izz="0.0375" ixy="0" ixz="0" iyz="0" />
+		</inertial>
 		<visual>
 			<geometry>
         <mesh filename="package://tr1_description/meshes/dae/arm7.dae" scale="0.001 0.001 0.001"/>
@@ -435,6 +741,16 @@
 	</link>
 
 	<link name="left_arm8_link">
+		<collision>
+			<geometry>
+        <mesh filename="package://tr1_description/meshes/dae/arm8.dae" scale="0.001 0.001 0.001"/>
+			</geometry>
+			<origin rpy="3.141592 0 0" />
+		</collision>
+		<inertial>
+			<mass value="1.0"/>
+			<inertia ixx="0.015" iyy="0.0375" izz="0.0375" ixy="0" ixz="0" iyz="0" />
+		</inertial>
 		<visual>
 			<geometry>
         <mesh filename="package://tr1_description/meshes/dae/arm8.dae" scale="0.001 0.001 0.001"/>
@@ -444,6 +760,16 @@
 	</link>
 
 	<link name="left_gripper1_link">
+		<collision>
+			<geometry>
+        <mesh filename="package://tr1_description/meshes/dae/gripper1.dae" scale="0.001 0.001 0.001"/>
+			</geometry>
+			<origin rpy="1.5708 0 0" />
+		</collision>
+		<inertial>
+			<mass value="1.0"/>
+			<inertia ixx="0.015" iyy="0.0375" izz="0.0375" ixy="0" ixz="0" iyz="0" />
+		</inertial>
 		<visual>
 			<geometry>
         <mesh filename="package://tr1_description/meshes/dae/gripper1.dae" scale="0.001 0.001 0.001"/>
@@ -453,6 +779,15 @@
 	</link>
 
 	<link name="left_gripper2_link">
+		<collision>
+			<geometry>
+        <mesh filename="package://tr1_description/meshes/dae/gripper2.dae" scale="0.001 0.001 0.001"/>
+			</geometry>
+		</collision>
+		<inertial>
+			<mass value="1.0"/>
+			<inertia ixx="0.015" iyy="0.0375" izz="0.0375" ixy="0" ixz="0" iyz="0" />
+		</inertial>
 		<visual>
 			<geometry>
         <mesh filename="package://tr1_description/meshes/dae/gripper2.dae" scale="0.001 0.001 0.001"/>
@@ -461,6 +796,15 @@
 	</link>
 
 	<link name="left_gripper3_link">
+		<collision>
+			<geometry>
+        <mesh filename="package://tr1_description/meshes/dae/gripper3.dae" scale="0.001 0.001 0.001"/>
+			</geometry>
+		</collision>
+		<inertial>
+			<mass value="1.0"/>
+			<inertia ixx="0.015" iyy="0.0375" izz="0.0375" ixy="0" ixz="0" iyz="0" />
+		</inertial>
 		<visual>
 			<geometry>
         <mesh filename="package://tr1_description/meshes/dae/gripper3.dae" scale="0.001 0.001 0.001"/>
@@ -469,6 +813,15 @@
 	</link>
 
 	<link name="left_gripper4l_link">
+		<collision>
+			<geometry>
+        <mesh filename="package://tr1_description/meshes/dae/gripper4.dae" scale="0.001 0.001 0.001"/>
+			</geometry>
+		</collision>
+		<inertial>
+			<mass value="1.0"/>
+			<inertia ixx="0.015" iyy="0.0375" izz="0.0375" ixy="0" ixz="0" iyz="0" />
+		</inertial>
 		<visual>
 			<geometry>
         <mesh filename="package://tr1_description/meshes/dae/gripper4.dae" scale="0.001 0.001 0.001"/>
@@ -477,6 +830,15 @@
 	</link>
 
 	<link name="left_gripper4r_link">
+		<collision>
+			<geometry>
+        <mesh filename="package://tr1_description/meshes/dae/gripper4.dae" scale="0.001 0.001 0.001"/>
+			</geometry>
+		</collision>
+		<inertial>
+			<mass value="1.0"/>
+			<inertia ixx="0.015" iyy="0.0375" izz="0.0375" ixy="0" ixz="0" iyz="0" />
+		</inertial>
 		<visual>
 			<geometry>
         <mesh filename="package://tr1_description/meshes/dae/gripper4.dae" scale="0.001 0.001 0.001"/>
@@ -485,6 +847,15 @@
 	</link>
 
 	<link name="left_gripper5_link">
+		<collision>
+			<geometry>
+        <mesh filename="package://tr1_description/meshes/dae/gripper5.dae" scale="0.001 0.001 0.001"/>
+			</geometry>
+		</collision>
+		<inertial>
+			<mass value="1.0"/>
+			<inertia ixx="0.015" iyy="0.0375" izz="0.0375" ixy="0" ixz="0" iyz="0" />
+		</inertial>
 		<visual>
 			<geometry>
         <mesh filename="package://tr1_description/meshes/dae/gripper5.dae" scale="0.001 0.001 0.001"/>
@@ -493,6 +864,16 @@
 	</link>
 
 	<link name="left_gripper6_link">
+		<collision>
+			<geometry>
+        <mesh filename="package://tr1_description/meshes/dae/gripper6.dae" scale="0.001 0.001 0.001"/>
+			</geometry>
+			<origin rpy="3.141592 0 1.5708" />
+		</collision>
+		<inertial>
+			<mass value="1.0"/>
+			<inertia ixx="0.015" iyy="0.0375" izz="0.0375" ixy="0" ixz="0" iyz="0" />
+		</inertial>
 		<visual>
 			<geometry>
         <mesh filename="package://tr1_description/meshes/dae/gripper6.dae" scale="0.001 0.001 0.001"/>
@@ -643,5 +1024,126 @@
     <axis xyz="1 0 0"/>
 		<limit effort="1.0" lower="-0.9" upper="0.4" velocity="0.5"/>
 	</joint>
+
+  <!--                GAZEBO RELATED PART                             -->
+
+  <!-- ROS Control plugin for Gazebo -->
+
+  <gazebo>
+    <plugin name="gazebo_ros_control" filename="libgazebo_ros_control.so">
+      <robotNamespace>/</robotNamespace>
+    </plugin>
+  </gazebo>
+
+  <!-- transmission -->
+  <transmission name="neck_to_head_trans">
+    <type>transmission_interface/SimpleTransmission</type>
+    <actuator name="motor1">
+      <mechanicalReduction>378</mechanicalReduction>
+      <hardwareInterface>EffortJointInterface</hardwareInterface>
+    </actuator>
+    <joint name="neck_to_head">
+      <hardwareInterface>hardware_interface/EffortJointInterface</hardwareInterface>
+    </joint>
+  </transmission>
+
+  <transmission name="neck_base_to_neck_trans">
+    <type>transmission_interface/SimpleTransmission</type>
+    <actuator name="motor2">
+      <mechanicalReduction>378</mechanicalReduction>
+      <hardwareInterface>EffortJointInterface</hardwareInterface>
+    </actuator>
+    <joint name="neck_base_to_neck">
+      <hardwareInterface>hardware_interface/EffortJointInterface</hardwareInterface>
+    </joint>
+  </transmission>
+
+  <transmission name="JointRightShoulderPan_trans">
+    <type>transmission_interface/SimpleTransmission</type>
+    <actuator name="motor3">
+      <mechanicalReduction>378</mechanicalReduction>
+      <hardwareInterface>EffortJointInterface</hardwareInterface>
+    </actuator>
+    <joint name="JointRightShoulderPan">
+      <hardwareInterface>hardware_interface/EffortJointInterface</hardwareInterface>
+    </joint>
+  </transmission>
+
+  <transmission name="JointRightShoulderTilt_trans">
+    <type>transmission_interface/SimpleTransmission</type>
+    <actuator name="motor4">
+      <mechanicalReduction>378</mechanicalReduction>
+      <hardwareInterface>EffortJointInterface</hardwareInterface>
+    </actuator>
+    <joint name="JointRightShoulderTilt">
+      <hardwareInterface>hardware_interface/EffortJointInterface</hardwareInterface>
+    </joint>
+  </transmission>
+
+  <transmission name="JointRightUpperArmRoll_trans">
+    <type>transmission_interface/SimpleTransmission</type>
+    <actuator name="motor5">
+      <mechanicalReduction>378</mechanicalReduction>
+      <hardwareInterface>EffortJointInterface</hardwareInterface>
+    </actuator>
+    <joint name="JointRightUpperArmRoll">
+      <hardwareInterface>hardware_interface/EffortJointInterface</hardwareInterface>
+    </joint>
+  </transmission>
+
+  <transmission name="JointRightElbowFlex_trans">
+    <type>transmission_interface/SimpleTransmission</type>
+    <actuator name="motor6">
+      <mechanicalReduction>378</mechanicalReduction>
+      <hardwareInterface>EffortJointInterface</hardwareInterface>
+    </actuator>
+    <joint name="JointRightElbowFlex">
+      <hardwareInterface>hardware_interface/EffortJointInterface</hardwareInterface>
+    </joint>
+  </transmission>
+
+  <transmission name="JointRightForearmRoll_trans">
+    <type>transmission_interface/SimpleTransmission</type>
+    <actuator name="motor7">
+      <mechanicalReduction>378</mechanicalReduction>
+      <hardwareInterface>EffortJointInterface</hardwareInterface>
+    </actuator>
+    <joint name="JointRightForearmRoll">
+      <hardwareInterface>hardware_interface/EffortJointInterface</hardwareInterface>
+    </joint>
+  </transmission>
+
+  <transmission name="JointRightWristFlex_trans">
+    <type>transmission_interface/SimpleTransmission</type>
+    <actuator name="motor8">
+      <mechanicalReduction>378</mechanicalReduction>
+      <hardwareInterface>EffortJointInterface</hardwareInterface>
+    </actuator>
+    <joint name="JointRightWristFlex">
+      <hardwareInterface>hardware_interface/EffortJointInterface</hardwareInterface>
+    </joint>
+  </transmission>
+
+  <transmission name="JointRightWristRoll_trans">
+    <type>transmission_interface/SimpleTransmission</type>
+    <actuator name="motor9">
+      <mechanicalReduction>378</mechanicalReduction>
+      <hardwareInterface>EffortJointInterface</hardwareInterface>
+    </actuator>
+    <joint name="JointRightWristRoll">
+      <hardwareInterface>hardware_interface/EffortJointInterface</hardwareInterface>
+    </joint>
+  </transmission>
+
+  <transmission name="JointRightGripper_trans">
+    <type>transmission_interface/SimpleTransmission</type>
+    <actuator name="motor10">
+      <mechanicalReduction>378</mechanicalReduction>
+      <hardwareInterface>EffortJointInterface</hardwareInterface>
+    </actuator>
+    <joint name="JointRightGripper">
+      <hardwareInterface>hardware_interface/EffortJointInterface</hardwareInterface>
+    </joint>
+  </transmission>
 
 </robot>

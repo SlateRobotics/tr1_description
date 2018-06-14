@@ -3,7 +3,7 @@
 	<link name="base_link">
 		<collision>
 			<geometry>
-        <mesh filename="package://tr1_description/meshes/dae/base.dae" scale="0.001 0.001 0.001"/>
+        <mesh filename="package://tr1_description/meshes/dae/base.dae" scale="0.1 0.1 0.1"/>
 			</geometry>
 			<origin rpy="0 0 3.141592" />
 		</collision>
@@ -13,7 +13,7 @@
 		</inertial>
 		<visual>
 			<geometry>
-        <mesh filename="package://tr1_description/meshes/dae/base.dae" scale="0.001 0.001 0.001"/>
+        <mesh filename="package://tr1_description/meshes/dae/base.dae" scale="0.1 0.1 0.1"/>
 			</geometry>
       <material name="white">
         <color rgba="1 1 1 1"/>
@@ -454,7 +454,7 @@
 		<child link="body_link"/>
     <axis xyz="0 0 1"/>
 		<limit effort="1000.0" lower="0" upper="0.150" velocity="0.0001"/>
-		<origin xyz="0 0 0.7195"/>
+		<origin xyz="0 0 0.707"/>
 	</joint>
 
 	<joint name="JointBaseWheelFL" type="continuous">

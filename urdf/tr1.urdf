@@ -9,7 +9,7 @@
 		</collision>
 		<inertial>
 			<mass value="1.0"/>
-			<inertia ixx="0.015" iyy="0.0375" izz="0.0375" ixy="0" ixz="0" iyz="0" />
+			<inertia ixx="0.1" iyy="0.1" izz="0.1" ixy="0" ixz="0" iyz="0" />
 		</inertial>
 		<visual>
 			<geometry>
@@ -31,7 +31,7 @@
 		</collision>
 		<inertial>
 			<mass value="1.0"/>
-			<inertia ixx="0.015" iyy="0.0375" izz="0.0375" ixy="0" ixz="0" iyz="0" />
+			<inertia ixx="0.1" iyy="0.1" izz="0.1" ixy="0" ixz="0" iyz="0" />
 		</inertial>
 		<visual>
 			<geometry>
@@ -50,7 +50,7 @@
 		</collision>
 		<inertial>
 			<mass value="1.0"/>
-			<inertia ixx="0.015" iyy="0.0375" izz="0.0375" ixy="0" ixz="0" iyz="0" />
+			<inertia ixx="0.1" iyy="0.1" izz="0.1" ixy="0" ixz="0" iyz="0" />
 		</inertial>
 		<visual>
 			<geometry>
@@ -69,7 +69,7 @@
 		</collision>
 		<inertial>
 			<mass value="1.0"/>
-			<inertia ixx="0.015" iyy="0.0375" izz="0.0375" ixy="0" ixz="0" iyz="0" />
+			<inertia ixx="0.1" iyy="0.1" izz="0.1" ixy="0" ixz="0" iyz="0" />
 		</inertial>
 		<visual>
 			<geometry>
@@ -88,7 +88,7 @@
 		</collision>
 		<inertial>
 			<mass value="1.0"/>
-			<inertia ixx="0.015" iyy="0.0375" izz="0.0375" ixy="0" ixz="0" iyz="0" />
+			<inertia ixx="0.1" iyy="0.1" izz="0.1" ixy="0" ixz="0" iyz="0" />
 		</inertial>
 		<visual>
 			<geometry>
@@ -106,8 +106,8 @@
 			<origin rpy="0 0 3.141592"/>
 		</collision>
 		<inertial>
-			<mass value="1.0"/>
-			<inertia ixx="0.015" iyy="0.0375" izz="0.0375" ixy="0" ixz="0" iyz="0" />
+			<mass value="0.005"/>
+			<inertia ixx="0.001" iyy="0.001" izz="0.001" ixy="0" ixz="0" iyz="0" />
 		</inertial>
 		<visual>
 			<geometry>
@@ -125,8 +125,8 @@
 			<origin rpy="1.5708 0 0" />
 		</collision>
 		<inertial>
-			<mass value="1.0"/>
-			<inertia ixx="0.015" iyy="0.0375" izz="0.0375" ixy="0" ixz="0" iyz="0" />
+			<mass value="0.005"/>
+			<inertia ixx="0.001" iyy="0.001" izz="0.001" ixy="0" ixz="0" iyz="0" />
 		</inertial>
 		<visual>
 			<geometry>
@@ -144,8 +144,8 @@
 			<origin rpy="1.5708 0 0" />
 		</collision>
 		<inertial>
-			<mass value="1.0"/>
-			<inertia ixx="0.015" iyy="0.0375" izz="0.0375" ixy="0" ixz="0" iyz="0" />
+			<mass value="0.005"/>
+			<inertia ixx="0.001" iyy="0.001" izz="0.001" ixy="0" ixz="0" iyz="0" />
 		</inertial>
 		<visual>
 			<geometry>
@@ -163,8 +163,8 @@
 			<origin rpy="1.5708 0 0" />
 		</collision>
 		<inertial>
-			<mass value="1.0"/>
-			<inertia ixx="0.015" iyy="0.0375" izz="0.0375" ixy="0" ixz="0" iyz="0" />
+			<mass value="0.005"/>
+			<inertia ixx="0.001" iyy="0.001" izz="0.001" ixy="0" ixz="0" iyz="0" />
 		</inertial>
 		<visual>
 			<geometry>
@@ -182,8 +182,8 @@
 			<origin rpy="1.5708 0 0" />
 		</collision>
 		<inertial>
-			<mass value="1.0"/>
-			<inertia ixx="0.015" iyy="0.0375" izz="0.0375" ixy="0" ixz="0" iyz="0" />
+			<mass value="0.005"/>
+			<inertia ixx="0.001" iyy="0.001" izz="0.001" ixy="0" ixz="0" iyz="0" />
 		</inertial>
 		<visual>
 			<geometry>
@@ -201,8 +201,8 @@
 			<origin rpy="-1.5708 3.141592 0" />
 		</collision>
 		<inertial>
-			<mass value="1.0"/>
-			<inertia ixx="0.015" iyy="0.0375" izz="0.0375" ixy="0" ixz="0" iyz="0" />
+			<mass value="0.005"/>
+			<inertia ixx="0.001" iyy="0.001" izz="0.001" ixy="0" ixz="0" iyz="0" />
 		</inertial>
 		<visual>
 			<geometry>
@@ -220,8 +220,8 @@
 			<origin rpy="-1.5708 0 0" />
 		</collision>
 		<inertial>
-			<mass value="1.0"/>
-			<inertia ixx="0.015" iyy="0.0375" izz="0.0375" ixy="0" ixz="0" iyz="0" />
+			<mass value="0.005"/>
+			<inertia ixx="0.001" iyy="0.001" izz="0.001" ixy="0" ixz="0" iyz="0" />
 		</inertial>
 		<visual>
 			<geometry>
@@ -239,8 +239,8 @@
 			<origin rpy="0 0 0" />
 		</collision>
 		<inertial>
-			<mass value="1.0"/>
-			<inertia ixx="0.015" iyy="0.0375" izz="0.0375" ixy="0" ixz="0" iyz="0" />
+			<mass value="0.005"/>
+			<inertia ixx="0.001" iyy="0.001" izz="0.001" ixy="0" ixz="0" iyz="0" />
 		</inertial>
 		<visual>
 			<geometry>
@@ -258,8 +258,8 @@
 			<origin rpy="3.141592 0 0" />
 		</collision>
 		<inertial>
-			<mass value="1.0"/>
-			<inertia ixx="0.015" iyy="0.0375" izz="0.0375" ixy="0" ixz="0" iyz="0" />
+			<mass value="0.005"/>
+			<inertia ixx="0.001" iyy="0.001" izz="0.001" ixy="0" ixz="0" iyz="0" />
 		</inertial>
 		<visual>
 			<geometry>
@@ -277,8 +277,8 @@
 			<origin rpy="1.5708 0 0" />
 		</collision>
 		<inertial>
-			<mass value="1.0"/>
-			<inertia ixx="0.015" iyy="0.0375" izz="0.0375" ixy="0" ixz="0" iyz="0" />
+			<mass value="0.005"/>
+			<inertia ixx="0.001" iyy="0.001" izz="0.001" ixy="0" ixz="0" iyz="0" />
 		</inertial>
 		<visual>
 			<geometry>
@@ -295,8 +295,8 @@
 			</geometry>
 		</collision>
 		<inertial>
-			<mass value="1.0"/>
-			<inertia ixx="0.015" iyy="0.0375" izz="0.0375" ixy="0" ixz="0" iyz="0" />
+			<mass value="0.005"/>
+			<inertia ixx="0.001" iyy="0.001" izz="0.001" ixy="0" ixz="0" iyz="0" />
 		</inertial>
 		<visual>
 			<geometry>
@@ -312,8 +312,8 @@
 			</geometry>
 		</collision>
 		<inertial>
-			<mass value="1.0"/>
-			<inertia ixx="0.015" iyy="0.0375" izz="0.0375" ixy="0" ixz="0" iyz="0" />
+			<mass value="0.005"/>
+			<inertia ixx="0.001" iyy="0.001" izz="0.001" ixy="0" ixz="0" iyz="0" />
 		</inertial>
 		<visual>
 			<geometry>
@@ -329,8 +329,8 @@
 			</geometry>
 		</collision>
 		<inertial>
-			<mass value="1.0"/>
-			<inertia ixx="0.015" iyy="0.0375" izz="0.0375" ixy="0" ixz="0" iyz="0" />
+			<mass value="0.005"/>
+			<inertia ixx="0.001" iyy="0.001" izz="0.001" ixy="0" ixz="0" iyz="0" />
 		</inertial>
 		<visual>
 			<geometry>
@@ -346,8 +346,8 @@
 			</geometry>
 		</collision>
 		<inertial>
-			<mass value="1.0"/>
-			<inertia ixx="0.015" iyy="0.0375" izz="0.0375" ixy="0" ixz="0" iyz="0" />
+			<mass value="0.005"/>
+			<inertia ixx="0.001" iyy="0.001" izz="0.001" ixy="0" ixz="0" iyz="0" />
 		</inertial>
 		<visual>
 			<geometry>
@@ -363,8 +363,8 @@
 			</geometry>
 		</collision>
 		<inertial>
-			<mass value="1.0"/>
-			<inertia ixx="0.015" iyy="0.0375" izz="0.0375" ixy="0" ixz="0" iyz="0" />
+			<mass value="0.005"/>
+			<inertia ixx="0.001" iyy="0.001" izz="0.001" ixy="0" ixz="0" iyz="0" />
 		</inertial>
 		<visual>
 			<geometry>
@@ -381,8 +381,8 @@
 			<origin rpy="3.141592 0 1.5708" />
 		</collision>
 		<inertial>
-			<mass value="1.0"/>
-			<inertia ixx="0.015" iyy="0.0375" izz="0.0375" ixy="0" ixz="0" iyz="0" />
+			<mass value="0.005"/>
+			<inertia ixx="0.001" iyy="0.001" izz="0.001" ixy="0" ixz="0" iyz="0" />
 		</inertial>
 		<visual>
 			<geometry>
@@ -400,8 +400,8 @@
 			<origin rpy="1.5708 0 0"/>
 		</collision>
 		<inertial>
-			<mass value="1.0"/>
-			<inertia ixx="0.015" iyy="0.0375" izz="0.0375" ixy="0" ixz="0" iyz="0" />
+			<mass value="0.005"/>
+			<inertia ixx="0.001" iyy="0.001" izz="0.001" ixy="0" ixz="0" iyz="0" />
 		</inertial>
 		<visual>
 			<geometry>
@@ -419,8 +419,8 @@
 			<origin rpy="1.5708 0 0"/>
 		</collision>
 		<inertial>
-			<mass value="1.0"/>
-			<inertia ixx="0.015" iyy="0.0375" izz="0.0375" ixy="0" ixz="0" iyz="0" />
+			<mass value="0.005"/>
+			<inertia ixx="0.001" iyy="0.001" izz="0.001" ixy="0" ixz="0" iyz="0" />
 		</inertial>
 		<visual>
 			<geometry>
@@ -438,8 +438,8 @@
 			<origin rpy="1.5708 0 0"/>
 		</collision>
 		<inertial>
-			<mass value="1.0"/>
-			<inertia ixx="0.015" iyy="0.0375" izz="0.0375" ixy="0" ixz="0" iyz="0" />
+			<mass value="0.005"/>
+			<inertia ixx="0.001" iyy="0.001" izz="0.001" ixy="0" ixz="0" iyz="0" />
 		</inertial>
 		<visual>
 			<geometry>
@@ -496,7 +496,7 @@
 		<child link="right_arm2_link"/>
 		<origin xyz="0 0 -0.007"/>
     <axis xyz="0 0 1"/>
-		<limit effort="1.0" lower="-1" upper="1.5708" velocity="0.1"/>
+		<limit effort="1.0" lower="-1" upper="1.5708" velocity="0.2932"/>
 	</joint>
 
 	<joint name="JointRightShoulderTilt" type="revolute">
@@ -504,7 +504,7 @@
 		<child link="right_arm3_link"/>
 		<origin xyz="0.139238 0 0"/>
     <axis xyz="0 1 0"/>
-		<limit effort="1.0" lower="-1.5708" upper="1.5708" velocity="0.5"/>
+		<limit effort="1.0" lower="-1.5708" upper="1.5708" velocity="0.1"/>
 		<saftey_controller k_velocity="100" />
 	</joint>
 
@@ -513,7 +513,7 @@
 		<child link="right_arm4_link"/>
 		<origin xyz="0.238827 0 0"/>
     <axis xyz="1 0 0"/>
-		<limit effort="1.0" lower="-3.1415" upper="3.1415" velocity="0.5"/>
+		<limit effort="1.0" lower="-3.1415" upper="3.1415" velocity="0.25"/>
 	</joint>
 
 	<joint name="JointRightElbowFlex" type="revolute">
@@ -521,7 +521,7 @@
 		<child link="right_arm5_link"/>
 		<origin xyz="0.145 0 0"/>
     <axis xyz="0 1 0"/>
-		<limit effort="1.0" lower="-1.75" upper="1.75" velocity="0.5"/>
+		<limit effort="1.0" lower="-1.75" upper="1.75" velocity="0.1"/>
 	</joint>
 
 	<joint name="JointRightForearmRoll" type="revolute">
@@ -529,7 +529,7 @@
 		<child link="right_arm6_link"/>
 		<origin xyz="0.230643 0 0"/>
     <axis xyz="1 0 0"/>
-		<limit effort="1.0" lower="-3.1415" upper="3.1415" velocity="0.5"/>
+		<limit effort="1.0" lower="-3.1415" upper="3.1415" velocity="1.4661"/>
 	</joint>
 
 	<joint name="JointRightWristFlex" type="revolute">
@@ -537,7 +537,7 @@
 		<child link="right_arm7_link"/>
 		<origin xyz="0.165 0 0"/>
     <axis xyz="0 1 0"/>
-		<limit effort="1.0" lower="-1.75" upper="1.75" velocity="0.5"/>
+		<limit effort="1.0" lower="-1.75" upper="1.75" velocity="0.7330"/>
 	</joint>
 
 	<joint name="JointRightWristRoll" type="revolute">
@@ -545,7 +545,7 @@
 		<child link="right_arm8_link"/>
 		<origin xyz="0.045311 0 0"/>
     <axis xyz="1 0 0"/>
-		<limit effort="1.0" lower="-2" upper="2" velocity="0.5"/>
+		<limit effort="1.0" lower="-2" upper="2" velocity="7.5398"/>
 	</joint>
 
 	<joint name="right_arm8_to_right_gripper1" type="fixed">
@@ -615,8 +615,8 @@
 			<origin rpy="1.5708 0 0" />
 		</collision>
 		<inertial>
-			<mass value="1.0"/>
-			<inertia ixx="0.015" iyy="0.0375" izz="0.0375" ixy="0" ixz="0" iyz="0" />
+			<mass value="0.005"/>
+			<inertia ixx="0.001" iyy="0.001" izz="0.001" ixy="0" ixz="0" iyz="0" />
 		</inertial>
 		<visual>
 			<geometry>
@@ -634,8 +634,8 @@
 			<origin rpy="1.5708 0 0" />
 		</collision>
 		<inertial>
-			<mass value="1.0"/>
-			<inertia ixx="0.015" iyy="0.0375" izz="0.0375" ixy="0" ixz="0" iyz="0" />
+			<mass value="0.005"/>
+			<inertia ixx="0.001" iyy="0.001" izz="0.001" ixy="0" ixz="0" iyz="0" />
 		</inertial>
 		<visual>
 			<geometry>
@@ -653,8 +653,8 @@
 			<origin rpy="1.5708 0 0" />
 		</collision>
 		<inertial>
-			<mass value="1.0"/>
-			<inertia ixx="0.015" iyy="0.0375" izz="0.0375" ixy="0" ixz="0" iyz="0" />
+			<mass value="0.005"/>
+			<inertia ixx="0.001" iyy="0.001" izz="0.001" ixy="0" ixz="0" iyz="0" />
 		</inertial>
 		<visual>
 			<geometry>
@@ -672,8 +672,8 @@
 			<origin rpy="1.5708 0 0" />
 		</collision>
 		<inertial>
-			<mass value="1.0"/>
-			<inertia ixx="0.015" iyy="0.0375" izz="0.0375" ixy="0" ixz="0" iyz="0" />
+			<mass value="0.005"/>
+			<inertia ixx="0.001" iyy="0.001" izz="0.001" ixy="0" ixz="0" iyz="0" />
 		</inertial>
 		<visual>
 			<geometry>
@@ -691,8 +691,8 @@
 			<origin rpy="-1.5708 3.141592 0" />
 		</collision>
 		<inertial>
-			<mass value="1.0"/>
-			<inertia ixx="0.015" iyy="0.0375" izz="0.0375" ixy="0" ixz="0" iyz="0" />
+			<mass value="0.005"/>
+			<inertia ixx="0.001" iyy="0.001" izz="0.001" ixy="0" ixz="0" iyz="0" />
 		</inertial>
 		<visual>
 			<geometry>
@@ -710,8 +710,8 @@
 			<origin rpy="-1.5708 0 0" />
 		</collision>
 		<inertial>
-			<mass value="1.0"/>
-			<inertia ixx="0.015" iyy="0.0375" izz="0.0375" ixy="0" ixz="0" iyz="0" />
+			<mass value="0.005"/>
+			<inertia ixx="0.001" iyy="0.001" izz="0.001" ixy="0" ixz="0" iyz="0" />
 		</inertial>
 		<visual>
 			<geometry>
@@ -729,8 +729,8 @@
 			<origin rpy="0 0 0" />
 		</collision>
 		<inertial>
-			<mass value="1.0"/>
-			<inertia ixx="0.015" iyy="0.0375" izz="0.0375" ixy="0" ixz="0" iyz="0" />
+			<mass value="0.005"/>
+			<inertia ixx="0.001" iyy="0.001" izz="0.001" ixy="0" ixz="0" iyz="0" />
 		</inertial>
 		<visual>
 			<geometry>
@@ -748,8 +748,8 @@
 			<origin rpy="3.141592 0 0" />
 		</collision>
 		<inertial>
-			<mass value="1.0"/>
-			<inertia ixx="0.015" iyy="0.0375" izz="0.0375" ixy="0" ixz="0" iyz="0" />
+			<mass value="0.005"/>
+			<inertia ixx="0.001" iyy="0.001" izz="0.001" ixy="0" ixz="0" iyz="0" />
 		</inertial>
 		<visual>
 			<geometry>
@@ -767,8 +767,8 @@
 			<origin rpy="1.5708 0 0" />
 		</collision>
 		<inertial>
-			<mass value="1.0"/>
-			<inertia ixx="0.015" iyy="0.0375" izz="0.0375" ixy="0" ixz="0" iyz="0" />
+			<mass value="0.005"/>
+			<inertia ixx="0.001" iyy="0.001" izz="0.001" ixy="0" ixz="0" iyz="0" />
 		</inertial>
 		<visual>
 			<geometry>
@@ -785,8 +785,8 @@
 			</geometry>
 		</collision>
 		<inertial>
-			<mass value="1.0"/>
-			<inertia ixx="0.015" iyy="0.0375" izz="0.0375" ixy="0" ixz="0" iyz="0" />
+			<mass value="0.005"/>
+			<inertia ixx="0.001" iyy="0.001" izz="0.001" ixy="0" ixz="0" iyz="0" />
 		</inertial>
 		<visual>
 			<geometry>
@@ -802,8 +802,8 @@
 			</geometry>
 		</collision>
 		<inertial>
-			<mass value="1.0"/>
-			<inertia ixx="0.015" iyy="0.0375" izz="0.0375" ixy="0" ixz="0" iyz="0" />
+			<mass value="0.005"/>
+			<inertia ixx="0.001" iyy="0.001" izz="0.001" ixy="0" ixz="0" iyz="0" />
 		</inertial>
 		<visual>
 			<geometry>
@@ -819,8 +819,8 @@
 			</geometry>
 		</collision>
 		<inertial>
-			<mass value="1.0"/>
-			<inertia ixx="0.015" iyy="0.0375" izz="0.0375" ixy="0" ixz="0" iyz="0" />
+			<mass value="0.005"/>
+			<inertia ixx="0.001" iyy="0.001" izz="0.001" ixy="0" ixz="0" iyz="0" />
 		</inertial>
 		<visual>
 			<geometry>
@@ -836,8 +836,8 @@
 			</geometry>
 		</collision>
 		<inertial>
-			<mass value="1.0"/>
-			<inertia ixx="0.015" iyy="0.0375" izz="0.0375" ixy="0" ixz="0" iyz="0" />
+			<mass value="0.005"/>
+			<inertia ixx="0.001" iyy="0.001" izz="0.001" ixy="0" ixz="0" iyz="0" />
 		</inertial>
 		<visual>
 			<geometry>
@@ -853,8 +853,8 @@
 			</geometry>
 		</collision>
 		<inertial>
-			<mass value="1.0"/>
-			<inertia ixx="0.015" iyy="0.0375" izz="0.0375" ixy="0" ixz="0" iyz="0" />
+			<mass value="0.005"/>
+			<inertia ixx="0.001" iyy="0.001" izz="0.001" ixy="0" ixz="0" iyz="0" />
 		</inertial>
 		<visual>
 			<geometry>
@@ -871,8 +871,8 @@
 			<origin rpy="3.141592 0 1.5708" />
 		</collision>
 		<inertial>
-			<mass value="1.0"/>
-			<inertia ixx="0.015" iyy="0.0375" izz="0.0375" ixy="0" ixz="0" iyz="0" />
+			<mass value="0.005"/>
+			<inertia ixx="0.001" iyy="0.001" izz="0.001" ixy="0" ixz="0" iyz="0" />
 		</inertial>
 		<visual>
 			<geometry>
@@ -1061,7 +1061,7 @@
   <transmission name="JointRightShoulderPan_trans">
     <type>transmission_interface/SimpleTransmission</type>
     <actuator name="motor3">
-      <mechanicalReduction>378</mechanicalReduction>
+      <mechanicalReduction>2000</mechanicalReduction>
       <hardwareInterface>EffortJointInterface</hardwareInterface>
     </actuator>
     <joint name="JointRightShoulderPan">
@@ -1072,7 +1072,7 @@
   <transmission name="JointRightShoulderTilt_trans">
     <type>transmission_interface/SimpleTransmission</type>
     <actuator name="motor4">
-      <mechanicalReduction>378</mechanicalReduction>
+      <mechanicalReduction>2000</mechanicalReduction>
       <hardwareInterface>EffortJointInterface</hardwareInterface>
     </actuator>
     <joint name="JointRightShoulderTilt">
@@ -1083,7 +1083,7 @@
   <transmission name="JointRightUpperArmRoll_trans">
     <type>transmission_interface/SimpleTransmission</type>
     <actuator name="motor5">
-      <mechanicalReduction>378</mechanicalReduction>
+      <mechanicalReduction>2000</mechanicalReduction>
       <hardwareInterface>EffortJointInterface</hardwareInterface>
     </actuator>
     <joint name="JointRightUpperArmRoll">
@@ -1094,7 +1094,7 @@
   <transmission name="JointRightElbowFlex_trans">
     <type>transmission_interface/SimpleTransmission</type>
     <actuator name="motor6">
-      <mechanicalReduction>378</mechanicalReduction>
+      <mechanicalReduction>2000</mechanicalReduction>
       <hardwareInterface>EffortJointInterface</hardwareInterface>
     </actuator>
     <joint name="JointRightElbowFlex">
@@ -1105,7 +1105,7 @@
   <transmission name="JointRightForearmRoll_trans">
     <type>transmission_interface/SimpleTransmission</type>
     <actuator name="motor7">
-      <mechanicalReduction>378</mechanicalReduction>
+      <mechanicalReduction>2000</mechanicalReduction>
       <hardwareInterface>EffortJointInterface</hardwareInterface>
     </actuator>
     <joint name="JointRightForearmRoll">
@@ -1116,7 +1116,7 @@
   <transmission name="JointRightWristFlex_trans">
     <type>transmission_interface/SimpleTransmission</type>
     <actuator name="motor8">
-      <mechanicalReduction>378</mechanicalReduction>
+      <mechanicalReduction>2000</mechanicalReduction>
       <hardwareInterface>EffortJointInterface</hardwareInterface>
     </actuator>
     <joint name="JointRightWristFlex">
@@ -1145,5 +1145,37 @@
       <hardwareInterface>hardware_interface/EffortJointInterface</hardwareInterface>
     </joint>
   </transmission>
+
+	<gazebo reference="right_arm1_link">
+		<gravity>0</gravity>
+	</gazebo>
+
+	<gazebo reference="right_arm2_link">
+		<gravity>0</gravity>
+	</gazebo>
+
+	<gazebo reference="right_arm3_link">
+		<gravity>0</gravity>
+	</gazebo>
+
+	<gazebo reference="right_arm4_link">
+		<gravity>0</gravity>
+	</gazebo>
+
+	<gazebo reference="right_arm5_link">
+		<gravity>0</gravity>
+	</gazebo>
+
+	<gazebo reference="right_arm6_link">
+		<gravity>0</gravity>
+	</gazebo>
+
+	<gazebo reference="right_arm7_link">
+		<gravity>0</gravity>
+	</gazebo>
+
+	<gazebo reference="right_arm8_link">
+		<gravity>0</gravity>
+	</gazebo>
 
 </robot>

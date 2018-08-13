@@ -504,8 +504,7 @@
 		<child link="right_arm3_link"/>
 		<origin xyz="0.139238 0 0"/>
     <axis xyz="0 1 0"/>
-		<limit effort="1.0" lower="-1.5708" upper="1.5708" velocity="0.1"/>
-		<saftey_controller k_velocity="100" />
+		<limit effort="1.0" lower="-1.5708" upper="1.5708" velocity="0.075"/>
 	</joint>
 
 	<joint name="JointRightUpperArmRoll" type="revolute">

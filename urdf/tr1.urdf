@@ -3,7 +3,7 @@
 	<link name="base_link">
 		<collision>
 			<geometry>
-        <mesh filename="package://tr1_description/meshes/dae/base.dae" scale="0.1 0.1 0.1"/>
+        <mesh filename="package://tr1_description/meshes/dae/base.dae" scale="0.001 0.001 0.001"/>
 			</geometry>
 			<origin rpy="0 0 3.141592" />
 		</collision>
@@ -13,7 +13,7 @@
 		</inertial>
 		<visual>
 			<geometry>
-        <mesh filename="package://tr1_description/meshes/dae/base.dae" scale="0.1 0.1 0.1"/>
+        <mesh filename="package://tr1_description/meshes/dae/base.dae" scale="0.001 0.001 0.001"/>
 			</geometry>
       <material name="white">
         <color rgba="1 1 1 1"/>
@@ -101,7 +101,7 @@
 	<link name="body_link">
 		<collision>
 			<geometry>
-        <mesh filename="package://tr1_description/meshes/dae/body.dae" scale="0.1 0.1 0.1"/>
+        <mesh filename="package://tr1_description/meshes/dae/body.dae" scale="0.001 0.001 0.001"/>
 			</geometry>
 			<origin rpy="0 0 3.141592"/>
 		</collision>
@@ -111,7 +111,7 @@
 		</inertial>
 		<visual>
 			<geometry>
-        <mesh filename="package://tr1_description/meshes/dae/body.dae" scale="0.1 0.1 0.1"/>
+        <mesh filename="package://tr1_description/meshes/dae/body.dae" scale="0.001 0.001 0.001"/>
 			</geometry>
 			<origin rpy="0 0 3.141592"/>
 		</visual>
@@ -433,7 +433,7 @@
 	<link name="head_link">
 		<collision>
 			<geometry>
-        <mesh filename="package://tr1_description/meshes/dae/head.dae" scale="0.1 0.1 0.1"/>
+        <mesh filename="package://tr1_description/meshes/dae/head.dae" scale="0.001 0.001 0.001"/>
 			</geometry>
 			<origin rpy="1.5708 0 0"/>
 		</collision>
@@ -443,7 +443,7 @@
 		</inertial>
 		<visual>
 			<geometry>
-        <mesh filename="package://tr1_description/meshes/dae/head.dae" scale="0.1 0.1 0.1"/>
+        <mesh filename="package://tr1_description/meshes/dae/head.dae" scale="0.001 0.001 0.001"/>
 			</geometry>
 			<origin rpy="0 -1.5708 -1.5708"/>
 		</visual>
@@ -892,7 +892,7 @@
 		<child link="left_arm2_link"/>
 		<origin xyz="0 0 -0.007"/>
     <axis xyz="0 0 1"/>
-		<limit effort="1.0" lower="-1.5708" upper="1" velocity="0.5"/>
+		<limit effort="1.0" lower="-1.5708" upper="1" velocity="1.5708"/>
 	</joint>
 
 	<joint name="JointLeftShoulderTilt" type="revolute">
@@ -900,7 +900,7 @@
 		<child link="left_arm3_link"/>
 		<origin xyz="0.139238 0 0"/>
     <axis xyz="0 1 0"/>
-		<limit effort="1.0" lower="-1.5708" upper="1.5708" velocity="0.5"/>
+		<limit effort="1.0" lower="-1.5708" upper="1.5708" velocity="0.1"/>
 	</joint>
 
 	<joint name="JointLeftUpperArmRoll" type="revolute">
@@ -908,7 +908,7 @@
 		<child link="left_arm4_link"/>
 		<origin xyz="0.238827 0 0"/>
     <axis xyz="1 0 0"/>
-		<limit effort="1.0" lower="-3.1415" upper="3.1415" velocity="0.5"/>
+		<limit effort="1.0" lower="-3.1415" upper="3.1415" velocity="0.25"/>
 	</joint>
 
 	<joint name="JointLeftElbowFlex" type="revolute">
@@ -916,7 +916,7 @@
 		<child link="left_arm5_link"/>
 		<origin xyz="0.145 0 0"/>
     <axis xyz="0 1 0"/>
-		<limit effort="1.0" lower="-1.75" upper="1.75" velocity="0.5"/>
+		<limit effort="1.0" lower="-1.75" upper="1.75" velocity="0.1"/>
 	</joint>
 
 	<joint name="JointLeftForearmRoll" type="revolute">
@@ -932,7 +932,7 @@
 		<child link="left_arm7_link"/>
 		<origin xyz="0.165 0 0"/>
     <axis xyz="0 1 0"/>
-		<limit effort="1.0" lower="-1.75" upper="1.75" velocity="0.5"/>
+		<limit effort="1.0" lower="-1.75" upper="1.75" velocity="0.7330"/>
 	</joint>
 
 	<joint name="JointLeftWristRoll" type="revolute">
@@ -940,7 +940,7 @@
 		<child link="left_arm8_link"/>
 		<origin xyz="0.045311 0 0"/>
     <axis xyz="1 0 0"/>
-		<limit effort="1.0" lower="-2" upper="2" velocity="0.5"/>
+		<limit effort="1.0" lower="-2" upper="2" velocity="7.5398"/>
 	</joint>
 
 	<joint name="left_arm8_to_left_gripper1" type="fixed">
@@ -954,7 +954,7 @@
 		<child link="left_gripper2_link"/>
 		<origin rpy="0 0 -1.5708" xyz="0.024 -0.014 0"/>
     <axis xyz="0 0 1"/>
-		<limit effort="1.0" lower="0" upper="1.5708" velocity="0.5"/>
+		<limit effort="1.0" lower="0" upper="1.5708" velocity="2.0"/>
 	</joint>
 
 	<joint name="left_gripper1_to_left_gripper3" type="revolute">
@@ -1031,6 +1031,61 @@
   <gazebo>
     <plugin name="gazebo_ros_control" filename="libgazebo_ros_control.so">
       <robotNamespace>/</robotNamespace>
+    </plugin>
+    <plugin name="left_gripper3_to_left_gripper5_mimic_joint_plugin" filename="libroboticsgroup_gazebo_mimic_joint_plugin.so">
+        <joint>JointLeftGripper</joint>
+        <mimicJoint>left_gripper3_to_left_gripper5</mimicJoint>
+        <multiplier>1</multiplier>
+    </plugin>
+    <plugin name="left_gripper2_to_left_gripper6_mimic_joint_plugin" filename="libroboticsgroup_gazebo_mimic_joint_plugin.so">
+        <joint>JointLeftGripper</joint>
+        <mimicJoint>left_gripper2_to_left_gripper6</mimicJoint>
+        <multiplier>-1</multiplier>
+    </plugin>
+    <plugin name="left_gripper1_to_left_gripper4r_mimic_joint_plugin" filename="libroboticsgroup_gazebo_mimic_joint_plugin.so">
+        <joint>JointLeftGripper</joint>
+        <mimicJoint>left_gripper1_to_left_gripper4r</mimicJoint>
+        <multiplier>1</multiplier>
+    </plugin>
+    <plugin name="left_gripper1_to_left_gripper4l_mimic_joint_plugin" filename="libroboticsgroup_gazebo_mimic_joint_plugin.so">
+        <joint>JointLeftGripper</joint>
+        <mimicJoint>left_gripper1_to_left_gripper4l</mimicJoint>
+        <multiplier>-1</multiplier>
+    </plugin>
+    <plugin name="left_gripper1_to_left_gripper3_mimic_joint_plugin" filename="libroboticsgroup_gazebo_mimic_joint_plugin.so">
+        <joint>JointLeftGripper</joint>
+        <mimicJoint>left_gripper1_to_left_gripper3</mimicJoint>
+        <multiplier>-1</multiplier>
+    </plugin>
+    <plugin name="right_gripper1_to_right_gripper3_mimic_joint_plugin" filename="libroboticsgroup_gazebo_mimic_joint_plugin.so">
+        <joint>JointRightGripper</joint>
+        <mimicJoint>right_gripper1_to_right_gripper3</mimicJoint>
+        <multiplier>-1</multiplier>
+    </plugin>
+    <plugin name="right_gripper2_to_right_gripper6_mimic_joint_plugin" filename="libroboticsgroup_gazebo_mimic_joint_plugin.so">
+        <joint>JointRightGripper</joint>
+        <mimicJoint>right_gripper2_to_right_gripper6</mimicJoint>
+        <multiplier>-1</multiplier>
+    </plugin>
+    <plugin name="right_gripper1_to_right_gripper3_mimic_joint_plugin" filename="libroboticsgroup_gazebo_mimic_joint_plugin.so">
+        <joint>JointRightGripper</joint>
+        <mimicJoint>right_gripper1_to_right_gripper3</mimicJoint>
+        <multiplier>-1</multiplier>
+    </plugin>
+    <plugin name="right_gripper1_to_right_gripper4l_mimic_joint_plugin" filename="libroboticsgroup_gazebo_mimic_joint_plugin.so">
+        <joint>JointRightGripper</joint>
+        <mimicJoint>right_gripper1_to_right_gripper4l</mimicJoint>
+        <multiplier>-1</multiplier>
+    </plugin>
+    <plugin name="right_gripper1_to_right_gripper4r_mimic_joint_plugin" filename="libroboticsgroup_gazebo_mimic_joint_plugin.so">
+        <joint>JointRightGripper</joint>
+        <mimicJoint>right_gripper1_to_right_gripper4r</mimicJoint>
+        <multiplier>1</multiplier>
+    </plugin>
+    <plugin name="right_gripper3_to_right_gripper5_mimic_joint_plugin" filename="libroboticsgroup_gazebo_mimic_joint_plugin.so">
+        <joint>JointRightGripper</joint>
+        <mimicJoint>right_gripper3_to_right_gripper5</mimicJoint>
+        <multiplier>1</multiplier>
     </plugin>
   </gazebo>
 
@@ -1145,36 +1200,151 @@
     </joint>
   </transmission>
 
-	<gazebo reference="right_arm1_link">
-		<gravity>0</gravity>
-	</gazebo>
+  <transmission name="JointLeftShoulderPan_trans">
+    <type>transmission_interface/SimpleTransmission</type>
+    <actuator name="motor11">
+      <mechanicalReduction>2000</mechanicalReduction>
+      <hardwareInterface>EffortJointInterface</hardwareInterface>
+    </actuator>
+    <joint name="JointLeftShoulderPan">
+      <hardwareInterface>hardware_interface/EffortJointInterface</hardwareInterface>
+    </joint>
+  </transmission>
 
-	<gazebo reference="right_arm2_link">
-		<gravity>0</gravity>
-	</gazebo>
+  <transmission name="JointLeftShoulderTilt_trans">
+    <type>transmission_interface/SimpleTransmission</type>
+    <actuator name="motor12">
+      <mechanicalReduction>2000</mechanicalReduction>
+      <hardwareInterface>EffortJointInterface</hardwareInterface>
+    </actuator>
+    <joint name="JointLeftShoulderTilt">
+      <hardwareInterface>hardware_interface/EffortJointInterface</hardwareInterface>
+    </joint>
+  </transmission>
 
-	<gazebo reference="right_arm3_link">
-		<gravity>0</gravity>
-	</gazebo>
+  <transmission name="JointLeftUpperArmRoll_trans">
+    <type>transmission_interface/SimpleTransmission</type>
+    <actuator name="motor13">
+      <mechanicalReduction>2000</mechanicalReduction>
+      <hardwareInterface>EffortJointInterface</hardwareInterface>
+    </actuator>
+    <joint name="JointLeftUpperArmRoll">
+      <hardwareInterface>hardware_interface/EffortJointInterface</hardwareInterface>
+    </joint>
+  </transmission>
 
-	<gazebo reference="right_arm4_link">
-		<gravity>0</gravity>
-	</gazebo>
+  <transmission name="JointLeftElbowFlex_trans">
+    <type>transmission_interface/SimpleTransmission</type>
+    <actuator name="motor14">
+      <mechanicalReduction>2000</mechanicalReduction>
+      <hardwareInterface>EffortJointInterface</hardwareInterface>
+    </actuator>
+    <joint name="JointLeftElbowFlex">
+      <hardwareInterface>hardware_interface/EffortJointInterface</hardwareInterface>
+    </joint>
+  </transmission>
 
-	<gazebo reference="right_arm5_link">
-		<gravity>0</gravity>
-	</gazebo>
+  <transmission name="JointLeftForearmRoll_trans">
+    <type>transmission_interface/SimpleTransmission</type>
+    <actuator name="motor15">
+      <mechanicalReduction>2000</mechanicalReduction>
+      <hardwareInterface>EffortJointInterface</hardwareInterface>
+    </actuator>
+    <joint name="JointLeftForearmRoll">
+      <hardwareInterface>hardware_interface/EffortJointInterface</hardwareInterface>
+    </joint>
+  </transmission>
 
-	<gazebo reference="right_arm6_link">
-		<gravity>0</gravity>
-	</gazebo>
+  <transmission name="JointLeftWristFlex_trans">
+    <type>transmission_interface/SimpleTransmission</type>
+    <actuator name="motor16">
+      <mechanicalReduction>2000</mechanicalReduction>
+      <hardwareInterface>EffortJointInterface</hardwareInterface>
+    </actuator>
+    <joint name="JointLeftWristFlex">
+      <hardwareInterface>hardware_interface/EffortJointInterface</hardwareInterface>
+    </joint>
+  </transmission>
 
-	<gazebo reference="right_arm7_link">
-		<gravity>0</gravity>
-	</gazebo>
+  <transmission name="JointLeftWristRoll_trans">
+    <type>transmission_interface/SimpleTransmission</type>
+    <actuator name="motor17">
+      <mechanicalReduction>378</mechanicalReduction>
+      <hardwareInterface>EffortJointInterface</hardwareInterface>
+    </actuator>
+    <joint name="JointLeftWristRoll">
+      <hardwareInterface>hardware_interface/EffortJointInterface</hardwareInterface>
+    </joint>
+  </transmission>
 
-	<gazebo reference="right_arm8_link">
-		<gravity>0</gravity>
-	</gazebo>
+  <transmission name="JointLeftGripper_trans">
+    <type>transmission_interface/SimpleTransmission</type>
+    <actuator name="motor18">
+      <mechanicalReduction>378</mechanicalReduction>
+      <hardwareInterface>EffortJointInterface</hardwareInterface>
+    </actuator>
+    <joint name="JointLeftGripper">
+      <hardwareInterface>hardware_interface/EffortJointInterface</hardwareInterface>
+    </joint>
+  </transmission>
+
+  <transmission name="JointBaseWheelFR_trans">
+    <type>transmission_interface/SimpleTransmission</type>
+    <actuator name="motor19">
+      <mechanicalReduction>1</mechanicalReduction>
+      <hardwareInterface>EffortJointInterface</hardwareInterface>
+    </actuator>
+    <joint name="JointBaseWheelFR">
+      <hardwareInterface>hardware_interface/EffortJointInterface</hardwareInterface>
+    </joint>
+  </transmission>
+
+
+  <transmission name="JointBaseWheelFL_trans">
+    <type>transmission_interface/SimpleTransmission</type>
+    <actuator name="motor20">
+      <mechanicalReduction>1</mechanicalReduction>
+      <hardwareInterface>EffortJointInterface</hardwareInterface>
+    </actuator>
+    <joint name="JointBaseWheelFL">
+      <hardwareInterface>hardware_interface/EffortJointInterface</hardwareInterface>
+    </joint>
+  </transmission>
+
+
+  <transmission name="JointBaseWheelBR_trans">
+    <type>transmission_interface/SimpleTransmission</type>
+    <actuator name="motor21">
+      <mechanicalReduction>1</mechanicalReduction>
+      <hardwareInterface>EffortJointInterface</hardwareInterface>
+    </actuator>
+    <joint name="JointBaseWheelBR">
+      <hardwareInterface>hardware_interface/EffortJointInterface</hardwareInterface>
+    </joint>
+  </transmission>
+
+  <transmission name="JointBaseWheelBL_trans">
+    <type>transmission_interface/SimpleTransmission</type>
+    <actuator name="motor22">
+      <mechanicalReduction>1</mechanicalReduction>
+      <hardwareInterface>EffortJointInterface</hardwareInterface>
+    </actuator>
+    <joint name="JointBaseWheelBL">
+      <hardwareInterface>hardware_interface/EffortJointInterface</hardwareInterface>
+    </joint>
+  </transmission>
+
+  <transmission name="JointTorsoExtension_trans">
+    <type>transmission_interface/SimpleTransmission</type>
+    <actuator name="motor23">
+      <mechanicalReduction>1</mechanicalReduction>
+      <hardwareInterface>EffortJointInterface</hardwareInterface>
+    </actuator>
+    <joint name="JointTorsoExtension">
+      <hardwareInterface>hardware_interface/EffortJointInterface</hardwareInterface>
+    </joint>
+  </transmission>
+
+
 
 </robot>
